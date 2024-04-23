@@ -10,7 +10,7 @@ namespace Alignment_Innovation_WEB.Pages
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
-        }
+        }   
 
         public void OnGet()
         {
