@@ -10,40 +10,69 @@
 </head>
 <body>
 
-
-    <header style="background-color: #333 !important;">
+    <header style="background: linear-gradient(to bottom right, #000000, #0c1444) !important;">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-green border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">
-                    <img src="https://i.imgur.com/GKzA9Nz.png" alt="Logo" width="200" height="50"> <!-- Reemplaza "ruta_de_tu_imagen" con la ruta a tu imagen -->
+                    <img src="https://i.imgur.com/GKzA9Nz.png" alt="Logo" width="200" height="50">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownHome" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownHome">
-                                <!-- Elementos del dropdown -->
-                                <a class="dropdown-item" asp-area="" asp-page="/Index">Subpage 1</a>
-                                <a class="dropdown-item" asp-area="" asp-page="/WhyAI">xXx</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdownPrivacy" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Privacy</a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownPrivacy">
-                                <!-- Elementos del dropdown -->
-                                <a class="dropdown-item" asp-area="" asp-page="/Privacy">Subpage 1</a>
-                                <a class="dropdown-item" asp-area="" asp-page="/Privacy">Subpage 2</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+                <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+                    <!-- Container wrapper -->
+                    <div class="container-fluid">
+                        <!-- Toggle button -->
+                        <button class="navbar-toggler"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#navbarRightAlignExample"
+                                aria-controls="navbarRightAlignExample"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </button>
+
+                        <!-- Collapsible wrapper -->
+                        <div class="collapse navbar-collapse" id="navbarRightAlignExample">
+                            <!-- Right-aligned links -->
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <!-- Botón Home -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Index">Home</a>
+                                </li>
+                                <!-- Dropdown Privacy -->
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle"
+                                       href="#"
+                                       id="navbarDropdownPrivacy"
+                                       role="button"
+                                       data-bs-toggle="dropdown"
+                                       aria-expanded="false">
+                                        Privacy
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownPrivacy">
+                                        <!-- Dropdown menu items -->
+                                        <li><a class="dropdown-item" href="#">Subpage 1</a></li>
+                                        <li><a class="dropdown-item" href="#">Subpage 2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <!-- Right-aligned links -->
+                        </div>
+                        <!-- Collapsible wrapper -->
+                    </div>
+                    <!-- Container wrapper -->
+                </nav>
+
             </div>
         </nav>
     </header>
+
+
+
+
 
 
     <div class="container">
@@ -52,9 +81,9 @@
         </main>
     </div>
 
-
+    <!-- Esta es la barra de Abajo de la pantalla  -->
     <!-- Footer -->
-    <footer class="text-center text-lg-start bg-body-tertiary text-muted" style="background-color: #333 !important;">
+    <footer style="background: linear-gradient(to bottom right, #000000, #0c1444) !important;">
         <!-- Section: Social media -->
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <!-- Left -->
