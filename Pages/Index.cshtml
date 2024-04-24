@@ -1,29 +1,36 @@
-﻿@page
+﻿
+@page
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
-<header style="margin-top: -17px;">
-    <!-- Ajusta este margen para que la imagen quede debajo de la barra de navegación -->
-    <!-- Background image -->
-    <div class="p-5 text-center bg-image"
-         style="
-            background-image: url('https://i.imgur.com/GUe22ci.jpeg');
-            background-size: cover; /* para cubrir todo el contenedor */
-            background-repeat: no-repeat; /* para evitar la repetición de la imagen */
-            background-position: center top; /* centra la imagen horizontalmente y la coloca en la parte superior */
-            height: calc(100vh - 58px); /* calcula la altura restando el tamaño de la barra de navegación */
-            width: 100vw; /* Ajusta el ancho para que ocupe todo el viewport horizontalmente */
-    ">
-        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6); height: 100%;">
-            <div class="d-flex justify-content-center align-items-center h-100">
-                <div class="text-white">
-                    <h1 class="mb-3">Heading</h1>
-                    <h4 class="mb-3">Subheading</h4>
-                    <a data-mdb-ripple-init class="btn btn-outline-light btn-lg" href="#!" role="button">Call to action</a>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of Expertise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="image-container">
+            <div class="image" id="image1">
+                <img src="https://img.freepik.com/vector-gratis/vector-fondo-tecnologia-seguridad-datos-tono-azul_53876-112201.jpg?w=1060&t=st=1713932051~exp=1713932651~hmac=69d96ec9d287a43a3beab2e78298abae268f2972622a1646c4886db2a8644938" alt="Image 1">
+                <div class="overlay">
+                    <div class="text">Cybersecurity is blablabla 1</div>
                 </div>
             </div>
+            <div class="image" id="image2">
+                <img src="image2.jpg" alt="Image 2">
+                <div class="overlay">
+                    <div class="text">Text for Image 2</div>
+                </div>
+            </div>
+            <!-- Agrega más imágenes con sus textos -->
         </div>
     </div>
-</header>
-
+    <script src="script.js"></script>
+</body>
+</html>
