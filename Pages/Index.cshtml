@@ -1,5 +1,4 @@
-﻿
-@page
+﻿@page
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -12,25 +11,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Area of Expertise</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para la imagen de fondo */
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.imgur.com/UFKspfB.png');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+        /* Estilos para la imagen dentro del contenido */
+        .top-image {
+            width: 100%; /* Ajusta el ancho según sea necesario */
+            margin-top: -100px; /* Ajusta el margen superior según sea necesario para evitar solapamientos */
+        }
+
+    </style>
 </head>
 <body>
+    <!-- Fondo en la parte superior de la página -->
+    <div class="background-image"></div>
+
+    <!-- Contenido de la página -->
+    <div class="content">
+        <!-- Imagen dentro del contenido -->
+        <img src="https://i.imgur.com/qs1ESyw.png" alt="Top Image" class="top-image">
+
+        <div class="text-after-image">
+            <p>OUR CAPABILITIES.</p>
+        </div>
+
+
+        <!-- Otro contenido de tu página -->
+        <div>
+            <!-- Otros elementos de tu página -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
     <div class="container">
         <div class="image-container">
             <div class="image" id="image1">
                 <img src="https://img.freepik.com/vector-gratis/vector-fondo-tecnologia-seguridad-datos-tono-azul_53876-112201.jpg?w=1060&t=st=1713932051~exp=1713932651~hmac=69d96ec9d287a43a3beab2e78298abae268f2972622a1646c4886db2a8644938" alt="Image 1">
                 <div class="overlay">
-                    <div class="text">Cybersecurity is blablabla 1</div>
+                    <div class="text">CLOUD MIGRATION</div>
                 </div>
             </div>
             <div class="image" id="image2">
-                <img src="image2.jpg" alt="Image 2">
+                <img src="https://img.freepik.com/vector-gratis/vector-fondo-tecnologia-seguridad-datos-tono-azul_53876-112201.jpg?w=1060&t=st=1713932051~exp=1713932651~hmac=69d96ec9d287a43a3beab2e78298abae268f2972622a1646c4886db2a8644938" alt="Image 2">
                 <div class="overlay">
-                    <div class="text">Text for Image 2</div>
+                    <div class="text">DATA & INSIGHTS </div>
                 </div>
             </div>
-            <!-- Agrega más imágenes con sus textos -->
+            <div class="image" id="image3">
+                <img src="https://img.freepik.com/vector-gratis/vector-fondo-tecnologia-seguridad-datos-tono-azul_53876-112201.jpg?w=1060&t=st=1713932051~exp=1713932651~hmac=69d96ec9d287a43a3beab2e78298abae268f2972622a1646c4886db2a8644938" alt="Image 3">
+                <div class="overlay">
+                    <div class="text">ARTIFICIAL INTELLIGENCE</div>
+                </div>
+            </div>
+            <div class="image" id="image4">
+                <img src="https://img.freepik.com/vector-gratis/vector-fondo-tecnologia-seguridad-datos-tono-azul_53876-112201.jpg?w=1060&t=st=1713932051~exp=1713932651~hmac=69d96ec9d287a43a3beab2e78298abae268f2972622a1646c4886db2a8644938" alt="Image 4">
+                <div class="overlay">
+                    <div class="text">CYBER SECURITY </div>
+                </div>
+            </div>
+            <div class="image" id="image5">
+                <img src="https://img.freepik.com/vector-gratis/vector-fondo-tecnologia-seguridad-datos-tono-azul_53876-112201.jpg?w=1060&t=st=1713932051~exp=1713932651~hmac=69d96ec9d287a43a3beab2e78298abae268f2972622a1646c4886db2a8644938" alt="Image 5">
+                <div class="overlay">
+                    <div class="text">Text for Image 5</div>
+                </div>
+            </div>
+            <div class="image" id="image6">
+                <img src="https://img.freepik.com/vector-gratis/vector-fondo-tecnologia-seguridad-datos-tono-azul_53876-112201.jpg?w=1060&t=st=1713932051~exp=1713932651~hmac=69d96ec9d287a43a3beab2e78298abae268f2972622a1646c4886db2a8644938" alt="Image 6">
+                <div class="overlay">
+                    <div class="text">Text for Image 6</div>
+                </div>
+            </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
