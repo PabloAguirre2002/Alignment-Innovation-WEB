@@ -73,4 +73,27 @@ body {
     font-size: 24px;
     text-align: center;
     padding: 20px;
+}
+
+/* Estilos para el fondo en la parte superior */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+    .background-image img {
+        width: 100%;
+        height: auto;
+    }
+
+/* Estilos para el contenedor principal */
+.container {
+    padding-top: 100px; /* Ajusta el espacio según sea necesario */
+}
+
+
+
 
