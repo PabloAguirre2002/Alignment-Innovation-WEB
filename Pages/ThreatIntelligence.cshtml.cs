@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Alignment_Innovation_WEB.Pages
 {
-    public class CallCenterServiceModel : PageModel
+    public class ThreatIntelligenceModel : PageModel
     {
         public void OnGet()
         {
