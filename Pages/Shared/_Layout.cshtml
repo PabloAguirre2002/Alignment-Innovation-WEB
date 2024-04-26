@@ -13,7 +13,7 @@
     <header style="background: linear-gradient(to bottom right, #000000, #0c1444) !important;">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-green border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Home">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">
                     <img src="https://i.imgur.com/SBsumla.png" alt="Logo" width="300" height="75">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
@@ -32,7 +32,7 @@
                             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                                 <!-- Botón Home (primera instancia) -->
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/Home"
+                                    <a class="nav-link" href="/Index"
                                        style="background: linear-gradient(to bottom right, #FFFFFF, #019CFF ); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Home</a>
                                 </li>
                                 <!-- Dropdown Privacy -->
@@ -47,7 +47,7 @@
                                         <li>
                                             <a class="dropdown-item"
                                                style="background: #FFFFFF; -webkit-background-clip: text; -webkit-text-fill-color: transparent"
-                                               href="/CyberSecurity">CyberSecurity</a>
+                                               href="ArtificialIntelligence">Artificial Intelligence</a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item"
@@ -62,18 +62,18 @@
                                         <li>
                                             <a class="dropdown-item"
                                                style="background: #FFFFFF; -webkit-background-clip: text; -webkit-text-fill-color: transparent"
-                                               href="ArtificialIntelligence">Artificial Intelligence</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item"
-                                               style="background: #FFFFFF; -webkit-background-clip: text; -webkit-text-fill-color: transparent"
-                                               href="ThreatIntelligence">Threat Intelligence</a>
+                                               href="/CyberSecurity">CyberSecurity</a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item"
                                                style="background: #FFFFFF; -webkit-background-clip: text; -webkit-text-fill-color: transparent"
                                                href="DevSecOps">DevSecOps</a>
                                         </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                               style="background: #FFFFFF; -webkit-background-clip: text; -webkit-text-fill-color: transparent"
+                                               href="ThreatIntelligence">Threat Intelligence</a>
+                                        </li>                                        
                                     </ul>
                                 </li>
                                 <!-- Segunda instancia del botó -->
@@ -88,23 +88,23 @@
                                         <li>
                                             <a class="dropdown-item"
                                                style="background: #FFFFFF; -webkit-background-clip: text; -webkit-text-fill-color: transparent"
-                                               href="LeadershipTeam">Leadership Team</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item"
-                                               style="background: #FFFFFF; -webkit-background-clip: text; -webkit-text-fill-color: transparent"
-                                               href="WhoWeAre">Who We Are</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item"
-                                               style="background: #FFFFFF; -webkit-background-clip: text; -webkit-text-fill-color: transparent"
                                                href="Clients">Clients</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                               style="background: #FFFFFF; -webkit-background-clip: text; -webkit-text-fill-color: transparent"
+                                               href="LeadershipTeam">Leadership Team</a>
                                         </li>
                                         <li>
                                             <a class="dropdown-item"
                                                style="background: #FFFFFF; -webkit-background-clip: text; -webkit-text-fill-color: transparent"
                                                href="Partners">Partners</a>
                                         </li>
+                                        <li>
+                                            <a class="dropdown-item"
+                                               style="background: #FFFFFF; -webkit-background-clip: text; -webkit-text-fill-color: transparent"
+                                               href="WhoWeAre">Who We Are</a>
+                                        </li> 
                                     </ul>
                                 </li>
                                 <!-- Botón CONTACTANOS (primera instancia) -->
@@ -120,7 +120,6 @@
                                         DISABLED!!
                                     </a>
                                 </li>
-
                             </ul>
                         </div>
                     </div>
@@ -183,7 +182,7 @@
                             Our Capabilities
                         </h6>
                         <p class="mb-1">
-                            <a href="CyberSecurity" class="text-reset" style="font-size: 0.85rem;">Cyber Security</a>
+                            <a href="ArtificialIntelligence" class="text-reset" style="font-size: 0.85rem;">Artificial Intelligense</a>
                         </p>
                         <p class="mb-1">
                             <a href="CallCenterService" class="text-reset" style="font-size: 0.85rem;">Call Center Service</a>
@@ -192,14 +191,14 @@
                             <a href="CloudMigration" class="text-reset" style="font-size: 0.85rem;">Cloud Migration</a>
                         </p>
                         <p class="mb-1">
-                            <a href="ArtificialIntelligence" class="text-reset" style="font-size: 0.85rem;">Artificial Intelligense</a>
-                        </p>
-                        <p class="mb-1">
-                            <a href="ThreatIntelligence" class="text-reset" style="font-size: 0.85rem;">Thread Intelligense</a>
+                            <a href="CyberSecurity" class="text-reset" style="font-size: 0.85rem;">Cyber Security</a>
                         </p>
                         <p class="mb-1">
                             <a href="DevSecOps" class="text-reset" style="font-size: 0.85rem;">Dev.Sec.Ops</a>
                         </p>
+                        <p class="mb-1">
+                            <a href="ThreatIntelligence" class="text-reset" style="font-size: 0.85rem;">Thread Intelligense</a>
+                        </p> 
                     </div>
                     <!-- Grid column -->
                     <!-- Grid column -->
@@ -209,17 +208,17 @@
                             Why Alignment Innovation?
                         </h6>
                         <p class="mb-1">
-                            <a href="LeadershipTeam" class="text-reset" style="font-size: 0.85rem;">Leadership team</a>
-                        </p>
-                        <p class="mb-1">
-                            <a href="WhoWeAre" class="text-reset" style="font-size: 0.85rem;">Who We Are</a>
-                        </p>
-                        <p class="mb-1">
                             <a href="Clients" class="text-reset" style="font-size: 0.85rem;">Clients</a>
+                        </p>
+                        <p class="mb-1">
+                            <a href="LeadershipTeam" class="text-reset" style="font-size: 0.85rem;">Leadership team</a>
                         </p>
                         <p class="mb-1">
                             <a href="Partners" class="text-reset" style="font-size: 0.85rem;">Partners</a>
                         </p>
+                        <p class="mb-1">
+                            <a href="WhoWeAre" class="text-reset" style="font-size: 0.85rem;">Who We Are</a>
+                        </p>   
                     </div>
                     <!-- Grid column -->
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-center">
