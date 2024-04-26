@@ -107,7 +107,7 @@ body {
 
 .image {
     position: relative;
-    width: 200px; / Ajusta el tamaño según sea necesario /
+    width: 50px; / Ajusta el tamaño según sea necesario /
 }
 
     .image img {
