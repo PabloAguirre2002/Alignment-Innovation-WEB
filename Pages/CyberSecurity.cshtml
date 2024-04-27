@@ -3,7 +3,73 @@
 @{
     ViewData["Title"] = "CyberSecurity";
 }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Esta es la imagen de Fondo de cuadrados */
+        body {
+            background-image: url('https://i.imgur.com/UFKspfB.png');
+            background-size: cover;
+            background-position: center;
+            margin: 0; /* Eliminar el margen predeterminado del body */
+            padding: 0; /* Eliminar el padding predeterminado del body */
+        }
+        /* Estilos para el contenedor principal */
+        .container {
+            display: flex; /* Utilizar flexbox para alinear los elementos */
+            justify-content: center; /* Alinear los elementos horizontalmente al centro */
+            align-items: center; /* Alinear los elementos verticalmente al centro */
+            padding: 20px; /* Agregar un padding al contenedor */
+            color: #fff; /* Color del texto */
+        }
+        /* Estilos para el recuadro resaltado */
+        .content-box {
+            background`: rgba(255, 255, 255, 0.1); /* Color de fondo con transparencia */
+            padding: 20px; /* Agregar espacio alrededor del contenido */
+            border-radius: 5px; /* Agregar esquinas redondeadas */
+            display: flex; /* Utilizar flexbox para alinear los elementos */
+            align-items: center; /* Alinear verticalmente los elementos */
+        }
+        /* Estilos para el texto */
+        .text-container {
+            padding-left: 20px; /* Agregar espacio entre la imagen y el texto */
+        }
 
-<h1>@ViewData["Title"]</h1>
+        h1, h6, p {
+            margin-bottom: 10px; /* Agregar un espacio inferior */
+        }
 
-<p>ACA</p>
+        p {
+            font-size: 14px; /* Tamaño de fuente */
+            line-height: 1.5; /* Altura de línea */
+        }
+        /* Estilos para la imagen */
+        .image-left {
+            width: 50%; /* Establecer un ancho para la imagen */
+            filter: grayscale(100%); /* Convertir la imagen a escala de grises */
+            transition: filter 0.3s; /* Agregar una transición para suavizar el cambio de filtro */
+        }
+
+            /* Estilos para cambiar la imagen a color al pasar el mouse */
+            .image-left:hover {
+                filter: grayscale(0%); /* Restablecer la imagen a color */
+            }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content-box">
+            <img src="" alt="Imagen" class="image-left">
+            <div class="text-container">
+                <h1>XXXXXXXXXXXX</h1>
+                <h6>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h6>
+                <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
