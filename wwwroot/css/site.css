@@ -128,7 +128,6 @@ body {
 
 .image:hover .overlay {
     opacity: 1; / Muestra la superposición al pasar el mouse */
-}
 
 .text {
     position: absolute;
