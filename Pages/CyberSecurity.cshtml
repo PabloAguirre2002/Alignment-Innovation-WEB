@@ -15,61 +15,71 @@
             margin: 0; /* Eliminar el margen predeterminado del body */
             padding: 0; /* Eliminar el padding predeterminado del body */
         }
-        /* Estilos para el contenedor principal */
-        .container {
-            display: flex; /* Utilizar flexbox para alinear los elementos */
-            justify-content: center; /* Alinear los elementos horizontalmente al centro */
-            align-items: center; /* Alinear los elementos verticalmente al centro */
-            padding: 20px; /* Agregar un padding al contenedor */
-            color: #fff; /* Color del texto */
-        }
-        /* Estilos para el recuadro resaltado */
-        .content-box {
-            background`: rgba(255, 255, 255, 0.1); /* Color de fondo con transparencia */
-            padding: 20px; /* Agregar espacio alrededor del contenido */
-            border-radius: 5px; /* Agregar esquinas redondeadas */
-            display: flex; /* Utilizar flexbox para alinear los elementos */
-            align-items: center; /* Alinear verticalmente los elementos */
-        }
-        /* Estilos para el texto */
-        .text-container {
-            padding-left: 20px; /* Agregar espacio entre la imagen y el texto */
+        /* Estilos para la imagen dentro del contenido */
+        .top-image {
+            width: 100%; /* Ajusta el ancho según sea necesario */
+            margin-top: -100px; /* Ajusta el margen superior según sea necesario para evitar solapamientos */
+            position: relative; /* Añadir posición relativa para permitir posicionar elementos hijos */
+            border-radius: 20px; /* Añadir bordes redondeados */
+            overflow: hidden; /* Ocultar el desbordamiento para que el desenfoque se limite al contenedor */
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Aplicar efecto de sombra difuminada */
         }
 
-        h1, h6, p {
-            margin-bottom: 10px; /* Agregar un espacio inferior */
+        /* Estilos para el botón */
+        .custom-button {
+            position: absolute; /* Posicionar el botón sobre la imagen */
+            top: 35%; /* Ajustar la posición vertical */
+            left: 70%; /* Ajustar la posición horizontal */
+            transform: translate(-50%, -50%); /* Centrar el botón */
+            z-index: 1; /* Asegurar que el botón esté sobre la imagen */
         }
 
-        p {
-            font-size: 14px; /* Tamaño de fuente */
-            line-height: 1.5; /* Altura de línea */
+        /* Estilos para el párrafo con título */
+        .custom-paragraph {
+            position: absolute; /* Posicionar el párrafo sobre la imagen */
+            bottom: 67%; /* Ajustar la posición vertical */
+            left: 70%; /* Ajustar la posición horizontal */
+            transform: translateX(-50%); /* Centrar el párrafo */
+            background-color: rgba(255, 255, 0, 0.5); /* Color de fondo amarillo con opacidad */
+            padding: 20px; /* Espaciado interno */
+            border-radius: 5px; /* Añadir bordes redondeados */
+            font-size: 16px; /* Tamaño de fuente */
+            text-align: center; /* Alinear texto al centro */
+            z-index: 1; /* Asegurar que el párrafo esté sobre la imagen */
+            width: 383px;
+            height: auto; /* Cambiado a 'auto' para adaptarse al contenido */
         }
-        /* Estilos para la imagen */
-        .image-left {
-            width: 50%; /* Establecer un ancho para la imagen */
-            filter: grayscale(100%); /* Convertir la imagen a escala de grises */
-            transition: filter 0.3s; /* Agregar una transición para suavizar el cambio de filtro */
-        }
-
-            /* Estilos para cambiar la imagen a color al pasar el mouse */
-            .image-left:hover {
-                filter: grayscale(0%); /* Restablecer la imagen a color */
-            }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="content-box">
-            <img src="" alt="Imagen" class="image-left">
-            <div class="text-container">
-                <h1>XXXXXXXXXXXX</h1>
-                <h6>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</h6>
-                <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
-            </div>
+    <div class="content">
+        <!-- Imagen dentro del contenido -->
+        <div class="top-image">
+            <img src="https://i.imgur.com/wY5YESQ.jpg" alt="Top Image" style="width: 100%;" class="top-image" >
         </div>
+
+        <!-- Botón sobre la imagen -->
+        <!-- Espacio para introducir imagen -->
+        <div class="custom-button">
+            <a href="/ContactUs">
+                <img src="https://i.imgur.com/X4Zzliy.png" alt="Contact Us" style="width: 200px; height 200px: auto;">
+            </a>
+        </div>
+
+        <!-- Párrafo con título sobre la imagen -->
+        <div class="custom-paragraph">
+            <h1>CyberSecurity</h1>
+            <p></p>
+            <h2>Build your Secure Digital Future</h2>
+            <p>Set sail towards the horizon of cybersecurity with the knowledge of Alignment Innovation. Our full range of solutions ensures your business is protected from ever-changing digital threats, preserving its agility and compliance in the digital world.</p>
+        </div>
+        <!--Redonditos con Engranajes-->
+        <p><img src="https://i.imgur.com/UNQKuvr.png" alt="Placeholder image" width="200" height="200" class="img-fluid rounded-circle">1234567891234567891235<img src="https://i.imgur.com/bE9Xhhf.png" alt="Placeholder image" width="200" height="200" class="img-fluid rounded-circle">1234567891234567891235<img src="https://i.imgur.com/zu2sxRb.png" alt="Placeholder image" width="200" height="200" class="img-fluid rounded-circle">1234567891234567891245</p>
+        <p><img src="https://i.imgur.com/PJIuLqF.png" alt="Placeholder image" width="200" height="200" class="img-fluid rounded-circle">1234567891234567891235<img src="https://i.imgur.com/M5WxzyB.png" alt="Placeholder image" width="200" height="200" class="img-fluid rounded-circle">1234567891234567891235<img src="https://i.imgur.com/WPbF3cO.png" alt="Placeholder image" width="200" height="200" class="img-fluid rounded-circle">1234567891234567891235</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
     </div>
 </body>
 </html>
-
 
