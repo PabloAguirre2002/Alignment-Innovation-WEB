@@ -6,6 +6,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Images</title>
+
     <style>
         /* Esta es la imagen de Fondo de cuadrados */
         body {
@@ -28,7 +33,7 @@
         /* Estilos para el botón */
         .custom-button {
             position: absolute; /* Posicionar el botón sobre la imagen */
-            top: 35%; /* Ajustar la posición vertical */
+            top: 30%; /* Ajustar la posición vertical */
             left: 70%; /* Ajustar la posición horizontal */
             transform: translate(-50%, -50%); /* Centrar el botón */
             z-index: 1; /* Asegurar que el botón esté sobre la imagen */
@@ -37,7 +42,7 @@
         /* Estilos para el párrafo con título */
         .custom-paragraph {
             position: absolute; /* Posicionar el párrafo sobre la imagen */
-            bottom: 67%; /* Ajustar la posición vertical */
+            bottom: 73%; /* Ajustar la posición vertical */
             left: 70%; /* Ajustar la posición horizontal */
             transform: translateX(-50%); /* Centrar el párrafo */
             background-color: rgba(255, 255, 0, 0.5); /* Color de fondo amarillo con opacidad */
@@ -49,6 +54,60 @@
             width: 383px;
             height: auto; /* Cambiado a 'auto' para adaptarse al contenido */
         }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .image-wrapper {
+            display: flex;
+            align-items: center;
+            margin: 10px;
+            background-color: rgba(204, 204, 204, 0.5); /* Fondo gris translúcido */
+            padding: 10px;
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
+            overflow: hidden; /* Oculta el contenido que se desborda */
+            max-width: 600px; /* Ancho máximo para evitar que las imágenes se expandan demasiado */
+        }
+
+
+        .img-fluid {
+            background-color: #ccc; /* Fondo gris */
+        }
+
+        .image-text {
+            margin-left: 20px; /* Espacio entre la imagen y el texto */
+            flex: 1; /* Permite que el texto ocupe todo el espacio restante */
+        }
+
+        .image-wrapper:hover {
+            background-color: rgba(204, 204, 204, 1); /* Recupera la opacidad completa al pasar el mouse */
+        }
+
+        .image-wrapper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0); /* Fondo blanco transparente */
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
+            z-index: -1;
+        }
+
+        .image-wrapper:hover::before {
+            background-color: rgba(255, 255, 255, 1); /* Recupera la opacidad completa al pasar el mouse */
+        }
+
+        .image-wrapper img {
+            max-width: 200px; /* Ancho máximo para las imágenes */
+            height: auto;
+            border-radius: 50%; /* Hace que la imagen sea circular */
+        }
+
     </style>
 </head>
 
@@ -74,12 +133,51 @@
             <h2>Build your Secure Digital Future</h2>
             <p>Set sail towards the horizon of cybersecurity with the knowledge of Alignment Innovation. Our full range of solutions ensures your business is protected from ever-changing digital threats, preserving its agility and compliance in the digital world.</p>
         </div>
-        <!--Redonditos con Engranajes-->
-        <p><img src="https://i.imgur.com/UNQKuvr.png" alt="Placeholder image" width="200" height="200" class="img-fluid rounded-circle">1234567891234567891235<img src="https://i.imgur.com/bE9Xhhf.png" alt="Placeholder image" width="200" height="200" class="img-fluid rounded-circle">1234567891234567891235<img src="https://i.imgur.com/zu2sxRb.png" alt="Placeholder image" width="200" height="200" class="img-fluid rounded-circle">1234567891234567891245</p>
-        <p><img src="https://i.imgur.com/PJIuLqF.png" alt="Placeholder image" width="200" height="200" class="img-fluid rounded-circle">1234567891234567891235<img src="https://i.imgur.com/M5WxzyB.png" alt="Placeholder image" width="200" height="200" class="img-fluid rounded-circle">1234567891234567891235<img src="https://i.imgur.com/WPbF3cO.png" alt="Placeholder image" width="200" height="200" class="img-fluid rounded-circle">1234567891234567891235</p>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-    </div>
+        <div class="content">
+            <!--Redonditos con Engranajes-->
+            <div class="image-wrapper">
+                <img src="https://i.imgur.com/UNQKuvr.png" alt="Placeholder image">
+                <div class="image-text">
+                    <h2>Zero Trust Deployment</h2>
+                    <p>1234567891234567891235</p>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="https://i.imgur.com/bE9Xhhf.png" alt="Placeholder image">
+                <div class="image-text">
+                    <h2>Objective Network Analysis</h2>
+                    <p>1234567891234567891235</p>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="https://i.imgur.com/zu2sxRb.png" alt="Placeholder image">
+                <div class="image-text">
+                    <h2>Digital Network Intelligence</h2>
+                    <p>1234567891234567891245</p>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="https://i.imgur.com/PJIuLqF.png" alt="Placeholder image">
+                <div class="image-text">
+                    <h2>Vulnerability Evaluation</h2>
+                    <p>1234567891234567891235</p>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="https://i.imgur.com/M5WxzyB.png" alt="Placeholder image">
+                <div class="image-text">
+                    <h2>Penetration Testing</h2>
+                    <p>1234567891234567891235</p>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="https://i.imgur.com/WPbF3cO.png" alt="Placeholder image">
+                <div class="image-text">
+                    <h2>ATO Assistance</h2>
+                    <p>1234567891234567891235</p>
+                </div>
+            </div>
+        </div>
 </body>
 </html>
 
