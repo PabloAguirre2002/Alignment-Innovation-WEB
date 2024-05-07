@@ -20,6 +20,12 @@
             margin: 0; /* Eliminar el margen predeterminado del body */
             padding: 0; /* Eliminar el padding predeterminado del body */
         }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
         /* Estilos para la imagen dentro del contenido */
         .top-image {
             width: 100%; /* Ajusta el ancho según sea necesario */
@@ -67,9 +73,11 @@
             margin: 10px;
             background-color: rgba(204, 204, 204, 0.5); /* Fondo gris translúcido */
             padding: 10px;
-            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
             overflow: hidden; /* Oculta el contenido que se desborda */
             max-width: 600px; /* Ancho máximo para evitar que las imágenes se expandan demasiado */
+            position: relative; /* Añadir posición relativa para contener el pseudo-elemento */
+            border-radius: 5px; /* Añadir bordes redondeados */
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
         }
 
 
@@ -106,11 +114,15 @@
             max-width: 200px; /* Ancho máximo para las imágenes */
             height: auto;
             border-radius: 50%; /* Hace que la imagen sea circular */
+            transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
+        }
+
+        .image-wrapper:hover img {
+            transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
         }
 
     </style>
 </head>
-
 <body>
     <div class="content">
         <!-- Imagen dentro del contenido -->
@@ -135,46 +147,49 @@
         </div>
         <div class="content">
             <!--Redonditos con Engranajes-->
-            <div class="image-wrapper">
-                <img src="https://i.imgur.com/UNQKuvr.png" alt="Placeholder image">
-                <div class="image-text">
-                    <h2>Zero Trust Deployment</h2>
-                    <p>1234567891234567891235</p>
+            <div class="image-container">
+                <div class="image-wrapper">
+                    <img src="https://i.imgur.com/UNQKuvr.png" alt="Placeholder image">
+                    <div class="image-text">
+                        <h2>ATO Assistance</h2>
+                        <p>1234567891234567891235</p>
+                    </div>
                 </div>
-            </div>
-            <div class="image-wrapper">
-                <img src="https://i.imgur.com/bE9Xhhf.png" alt="Placeholder image">
-                <div class="image-text">
-                    <h2>Objective Network Analysis</h2>
-                    <p>1234567891234567891235</p>
+                <div class="image-wrapper">
+                    <img src="https://i.imgur.com/bE9Xhhf.png" alt="Placeholder image">
+                    <div class="image-text">
+                        <h2>ATO Assistance</h2>
+                        <p>1234567891234567891235</p>
+
+                    </div>
                 </div>
-            </div>
-            <div class="image-wrapper">
-                <img src="https://i.imgur.com/zu2sxRb.png" alt="Placeholder image">
-                <div class="image-text">
-                    <h2>Digital Network Intelligence</h2>
-                    <p>1234567891234567891245</p>
+                <div class="image-wrapper">
+                    <img src="https://i.imgur.com/zu2sxRb.png" alt="Placeholder image">
+                    <div class="image-text">
+                        <h2>ATO Assistance</h2>
+                        <p>1234567891234567891235</p>
+                    </div>
                 </div>
-            </div>
-            <div class="image-wrapper">
-                <img src="https://i.imgur.com/PJIuLqF.png" alt="Placeholder image">
-                <div class="image-text">
-                    <h2>Vulnerability Evaluation</h2>
-                    <p>1234567891234567891235</p>
+                <div class="image-wrapper">
+                    <img src="https://i.imgur.com/PJIuLqF.png" alt="Placeholder image">
+                    <div class="image-text">
+                        <h2>ATO Assistance</h2>
+                        <p>1234567891234567891235</p>
+                    </div>
                 </div>
-            </div>
-            <div class="image-wrapper">
-                <img src="https://i.imgur.com/M5WxzyB.png" alt="Placeholder image">
-                <div class="image-text">
-                    <h2>Penetration Testing</h2>
-                    <p>1234567891234567891235</p>
+                <div class="image-wrapper">
+                    <img src="https://i.imgur.com/M5WxzyB.png" alt="Placeholder image">
+                    <div class="image-text">
+                        <h2>ATO Assistance</h2>
+                        <p>1234567891234567891235</p>
+                    </div>
                 </div>
-            </div>
-            <div class="image-wrapper">
-                <img src="https://i.imgur.com/WPbF3cO.png" alt="Placeholder image">
-                <div class="image-text">
-                    <h2>ATO Assistance</h2>
-                    <p>1234567891234567891235</p>
+                <div class="image-wrapper">
+                    <img src="https://i.imgur.com/WPbF3cO.png" alt="Placeholder image">
+                    <div class="image-text">
+                        <h2>ATO Assistance</h2>
+                        <p>1234567891234567891235</p>
+                    </div>
                 </div>
             </div>
         </div>
