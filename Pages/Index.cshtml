@@ -9,18 +9,118 @@
 <head>
 
     <style>
-        /* Estilos para la imagen de fondo */
-        .background-image {
-            position: fixed;
-            top: 0;
-            left: 0;
+        .background {
+            position: absolute;
+            overflow: hidden;
             width: 100%;
             height: 100%;
-            background-image: url('https://i.imgur.com/UFKspfB.png');
-            background-size: cover;
-            background-position: center;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to right, #0d133f, #0b5f60);
+            display: flex;
+            flex-grow: 1;
             z-index: -1;
         }
+
+            .background div {
+                position: absolute;
+                border-radius: 100%;
+                height: 0;
+                filter: blur(240vw);
+                opacity: 0.4;
+            }
+
+                .background div:nth-child(1) {
+                    background: linear-gradient(132deg, #ffdd00 0.00%, #04ff00 100.00%);
+                    width: 150%;
+                    padding-top: 150%;
+                    left: 100%;
+                    top: 100%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(2) {
+                    background: linear-gradient(132deg, #ff00d0 0.00%, #ff0000 100.00%);
+                    width: 97%;
+                    padding-top: 97%;
+                    left: 81%;
+                    top: 0%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(3) {
+                    background: linear-gradient(132deg, #209881 0.00%, #a75be3 100.00%);
+                    width: 94%;
+                    padding-top: 94%;
+                    left: 75%;
+                    top: 94%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(4) {
+                    background: linear-gradient(132deg, #cce62 0.00%, #5f63fc 100.00%);
+                    width: 17%;
+                    padding-top: 17%;
+                    left: 71%;
+                    top: 88%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(5) {
+                    background: linear-gradient(132deg, #1fb6d8 0.00%, #e8323d 100.00%);
+                    width: 76%;
+                    padding-top: 76%;
+                    left: 76%;
+                    top: 44%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(6) {
+                    background: linear-gradient(132deg, #220f12 0.00%, #4af41f 100.00%);
+                    width: 32%;
+                    padding-top: 32%;
+                    left: 47%;
+                    top: 71%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(7) {
+                    background: linear-gradient(132deg, #16e90d 0.00%, #df65a6 100.00%);
+                    width: 26%;
+                    padding-top: 26%;
+                    left: 18%;
+                    top: 69%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(8) {
+                    background: linear-gradient(132deg, #5a1531 0.00%, #a771c6 100.00%);
+                    width: 3%;
+                    padding-top: 3%;
+                    left: 85%;
+                    top: 35%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(9) {
+                    background: linear-gradient(132deg, #7c8377 0.00%, #ab79cb 100.00%);
+                    width: 90%;
+                    padding-top: 90%;
+                    left: 30%;
+                    top: 16%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(10) {
+                    background: linear-gradient(132deg, #a9ab90 0.00%, #191767 100.00%);
+                    width: 47%;
+                    padding-top: 47%;
+                    left: 46%;
+                    top: 69%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+
         /* Estilos para la imagen dentro del contenido */
         .top-image {
             width: 100%; /* Ajusta el ancho según sea necesario */
@@ -37,6 +137,20 @@
             border-radius: 5px;
 
     </style>
+
+    <div class="background">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
 </head>
 <body>
     <!-- Fondo en la parte superior de la página -->

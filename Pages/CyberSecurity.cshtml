@@ -11,15 +11,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transparent Images</title>
 
-    <style>
-        /* Esta es la imagen de Fondo de cuadrados */
-        body {
-            background-image: url('https://i.imgur.com/UFKspfB.png');
-            background-size: cover;
-            background-position: center;
-            margin: 0; /* Eliminar el margen predeterminado del body */
-            padding: 0; /* Eliminar el padding predeterminado del body */
+    <style> 
+
+        button {
+            padding: 17px 40px;
+            border-radius: 50px;
+            cursor: pointer;
+            border: 0;
+            background-color: white;
+            box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 15px;
+            transition: all 0.5s ease;
         }
+
+            button:hover {
+                letter-spacing: 3px;
+                background-color: hsl(261deg 80% 48%);
+                color: hsl(0, 0%, 100%);
+                box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+            }
+
+            button:active {
+                letter-spacing: 3px;
+                background-color: hsl(261deg 80% 48%);
+                color: hsl(0, 0%, 100%);
+                box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+                transform: translateY(10px);
+                transition: 100ms;
+            }
+
+        /* Esta es la imagen de Fondo de cuadrados */
+        .background {
+            position: absolute;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to right, #000a57, #370042);
+            display: flex;
+            flex-grow: 1;
+            z-index: -1;
+        }
+
+            .background div {
+                position: absolute;
+                border-radius: 100%;
+                height: 0;
+                filter: blur(240vw);
+                opacity: 0.4;
+            }
+
+                .background div:nth-child(1) {
+                    background: linear-gradient(132deg, #ff0000 0.00%, #fbff00 100.00%);
+                    width: 150%;
+                    padding-top: 150%;
+                    left: 100%;
+                    top: 100%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(2) {
+                    background: linear-gradient(132deg, #87a4ed 0.00%, #f28df7 100.00%);
+                    width: 12%;
+                    padding-top: 12%;
+                    left: 81%;
+                    top: 3%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(3) {
+                    background: linear-gradient(132deg, #209881 0.00%, #a75be3 100.00%);
+                    width: 94%;
+                    padding-top: 94%;
+                    left: 75%;
+                    top: 94%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(4) {
+                    background: linear-gradient(132deg, #cce62 0.00%, #5f63fc 100.00%);
+                    width: 17%;
+                    padding-top: 17%;
+                    left: 71%;
+                    top: 88%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(5) {
+                    background: linear-gradient(132deg, #1fb6d8 0.00%, #e8323d 100.00%);
+                    width: 76%;
+                    padding-top: 76%;
+                    left: 76%;
+                    top: 44%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(6) {
+                    background: linear-gradient(132deg, #220f12 0.00%, #4af41f 100.00%);
+                    width: 32%;
+                    padding-top: 32%;
+                    left: 47%;
+                    top: 71%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(7) {
+                    background: linear-gradient(132deg, #16e90d 0.00%, #df65a6 100.00%);
+                    width: 26%;
+                    padding-top: 26%;
+                    left: 18%;
+                    top: 69%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(8) {
+                    background: linear-gradient(132deg, #5a1531 0.00%, #a771c6 100.00%);
+                    width: 3%;
+                    padding-top: 3%;
+                    left: 85%;
+                    top: 35%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(9) {
+                    background: linear-gradient(132deg, #7c8377 0.00%, #ab79cb 100.00%);
+                    width: 90%;
+                    padding-top: 90%;
+                    left: 30%;
+                    top: 16%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(10) {
+                    background: linear-gradient(132deg, #a9ab90 0.00%, #191767 100.00%);
+                    width: 47%;
+                    padding-top: 47%;
+                    left: 46%;
+                    top: 69%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+
 
         .content {
             max-width: 1200px;
@@ -35,16 +170,6 @@
             overflow: hidden; /* Ocultar el desbordamiento para que el desenfoque se limite al contenedor */
             filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Aplicar efecto de sombra difuminada */
         }
-
-        /* Estilos para el botón */
-        .custom-button {
-            position: absolute; /* Posicionar el botón sobre la imagen */
-            top: 30%; /* Ajustar la posición vertical */
-            left: 70%; /* Ajustar la posición horizontal */
-            transform: translate(-50%, -50%); /* Centrar el botón */
-            z-index: 1; /* Asegurar que el botón esté sobre la imagen */
-        }
-
         /* Estilos para el párrafo con título */
         .custom-paragraph {
             position: absolute; /* Posicionar el párrafo sobre la imagen */
@@ -67,14 +192,85 @@
             flex-wrap: wrap;
         }
 
-        .image-wrapper {
+        .image-wrapper1 {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            margin: 10px;
+            margin: 20px; /* Ajustar el margen */
             background-color: rgba(204, 204, 204, 0.5); /* Fondo gris translúcido */
             padding: 10px;
             overflow: hidden; /* Oculta el contenido que se desborda */
-            max-width: 600px; /* Ancho máximo para evitar que las imágenes se expandan demasiado */
+            max-width: calc(33.33% - 40px); /* Ancho máximo para evitar que las imágenes se expandan demasiado */
+            position: relative; /* Añadir posición relativa para contener el pseudo-elemento */
+            border-radius: 5px; /* Añadir bordes redondeados */
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
+        }
+
+        .image-wrapper2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px; /* Ajustar el margen */
+            background-color: rgba(204, 204, 204, 0.5); /* Fondo gris translúcido */
+            padding: 10px;
+            overflow: hidden; /* Oculta el contenido que se desborda */
+            max-width: calc(33.33% - 40px); /* Ancho máximo para evitar que las imágenes se expandan demasiado */
+            position: relative; /* Añadir posición relativa para contener el pseudo-elemento */
+            border-radius: 5px; /* Añadir bordes redondeados */
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
+        }
+
+        .image-wrapper3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px; /* Ajustar el margen */
+            background-color: rgba(204, 204, 204, 0.5); /* Fondo gris translúcido */
+            padding: 10px;
+            overflow: hidden; /* Oculta el contenido que se desborda */
+            max-width: calc(33.33% - 40px); /* Ancho máximo para evitar que las imágenes se expandan demasiado */
+            position: relative; /* Añadir posición relativa para contener el pseudo-elemento */
+            border-radius: 5px; /* Añadir bordes redondeados */
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
+        }
+
+        .image-wrapper4 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px; /* Ajustar el margen */
+            background-color: rgba(204, 204, 204, 0.5); /* Fondo gris translúcido */
+            padding: 10px;
+            overflow: hidden; /* Oculta el contenido que se desborda */
+            max-width: calc(33.33% - 40px); /* Ancho máximo para evitar que las imágenes se expandan demasiado */
+            position: relative; /* Añadir posición relativa para contener el pseudo-elemento */
+            border-radius: 5px; /* Añadir bordes redondeados */
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
+        }
+
+        .image-wrapper5 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px; /* Ajustar el margen */
+            background-color: rgba(204, 204, 204, 0.5); /* Fondo gris translúcido */
+            padding: 10px;
+            overflow: hidden; /* Oculta el contenido que se desborda */
+            max-width: calc(33.33% - 40px); /* Ancho máximo para evitar que las imágenes se expandan demasiado */
+            position: relative; /* Añadir posición relativa para contener el pseudo-elemento */
+            border-radius: 5px; /* Añadir bordes redondeados */
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
+        }
+
+        .image-wrapper6 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px; /* Ajustar el margen */
+            background-color: rgba(204, 204, 204, 0.5); /* Fondo gris translúcido */
+            padding: 10px;
+            overflow: hidden; /* Oculta el contenido que se desborda */
+            max-width: calc(33.33% - 40px); /* Ancho máximo para evitar que las imágenes se expandan demasiado */
             position: relative; /* Añadir posición relativa para contener el pseudo-elemento */
             border-radius: 5px; /* Añadir bordes redondeados */
             transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
@@ -83,18 +279,39 @@
 
         .img-fluid {
             background-color: #ccc; /* Fondo gris */
+            border-radius: 50%; /* Hace que la imagen sea circular */
         }
 
         .image-text {
-            margin-left: 20px; /* Espacio entre la imagen y el texto */
-            flex: 1; /* Permite que el texto ocupe todo el espacio restante */
+            margin-top: 10px; /* Espacio entre la imagen y el texto */
+            text-align: center; /* Alinear texto al centro */
         }
 
-        .image-wrapper:hover {
-            background-color: rgba(204, 204, 204, 1); /* Recupera la opacidad completa al pasar el mouse */
+        .image-wrapper1:hover {
+            background-color: rgba(73, 196, 43, 1); /* Recupera la opacidad completa al pasar el mouse */
         }
 
-        .image-wrapper::before {
+        .image-wrapper2:hover {
+            background-color: rgba(222, 64, 64, 1); /* Recupera la opacidad completa al pasar el mouse */
+        }
+
+        .image-wrapper3:hover {
+            background-color: rgba(222, 155, 64, 1); /* Recupera la opacidad completa al pasar el mouse */
+        }
+
+        .image-wrapper4:hover {
+            background-color: rgba(64, 152, 222, 1); /* Recupera la opacidad completa al pasar el mouse */
+        }
+
+        .image-wrapper5:hover {
+            background-color: rgba(229, 94, 225, 1); /* Recupera la opacidad completa al pasar el mouse */
+        }
+
+        .image-wrapper6:hover {
+            background-color: rgba(225, 221, 132, 1); /* Recupera la opacidad completa al pasar el mouse */
+        }
+
+        .image-wrapper1::before {
             content: "";
             position: absolute;
             top: 0;
@@ -106,36 +323,176 @@
             z-index: -1;
         }
 
-        .image-wrapper:hover::before {
-            background-color: rgba(255, 255, 255, 1); /* Recupera la opacidad completa al pasar el mouse */
+        .image-wrapper2::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0); /* Fondo blanco transparente */
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
+            z-index: -1;
         }
 
-        .image-wrapper img {
-            max-width: 200px; /* Ancho máximo para las imágenes */
+        .image-wrapper3::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0); /* Fondo blanco transparente */
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
+            z-index: -1;
+        }
+
+        .image-wrapper4::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0); /* Fondo blanco transparente */
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
+            z-index: -1;
+        }
+
+        .image-wrapper5::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0); /* Fondo blanco transparente */
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
+            z-index: -1;
+        }
+
+        .image-wrapper6::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0); /* Fondo blanco transparente */
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
+            z-index: -1;
+        }
+
+        .image-wrapper1:hover::before {
+            background-color: rgba(63, 255, 1, 1); /* Recupera la opacidad completa al pasar el mouse */
+        }
+
+        .image-wrapper2:hover::before {
+            background-color: rgba(255, 1, 1, 1); /* Recupera la opacidad completa al pasar el mouse */
+        }
+
+        .image-wrapper3:hover::before {
+            background-color: rgba(255, 163, 1, 1); /* Recupera la opacidad completa al pasar el mouse */
+        }
+
+        .image-wrapper4:hover::before {
+            background-color: rgba(1, 117, 255, 1); /* Recupera la opacidad completa al pasar el mouse */
+        }
+
+        .image-wrapper5:hover::before {
+            background-color: rgba(251, 1, 255, 1); /* Recupera la opacidad completa al pasar el mouse */
+        }
+
+        .image-wrapper6:hover::before {
+            background-color: rgba(255, 236, 1, 1); /* Recupera la opacidad completa al pasar el mouse */
+        }
+        .image-wrapper1 img {
+            max-width: 100%; /* Ancho máximo para las imágenes */
             height: auto;
-            border-radius: 50%; /* Hace que la imagen sea circular */
             transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
+            margin-bottom: 10px;
         }
 
-        .image-wrapper:hover img {
+        .image-wrapper2 img {
+            max-width: 100%; /* Ancho máximo para las imágenes */
+            height: auto;
+            transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
+            margin-bottom: 10px;
+        }
+
+        .image-wrapper3 img {
+            max-width: 100%; /* Ancho máximo para las imágenes */
+            height: auto;
+            transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
+            margin-bottom: 10px;
+        }
+
+        .image-wrapper4 img {
+            max-width: 100%; /* Ancho máximo para las imágenes */
+            height: auto;
+            transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
+            margin-bottom: 10px;
+        }
+
+        .image-wrapper5 img {
+            max-width: 100%; /* Ancho máximo para las imágenes */
+            height: auto;
+            transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
+            margin-bottom: 10px;
+        }
+
+        .image-wrapper6 img {
+            max-width: 100%; /* Ancho máximo para las imágenes */
+            height: auto;
+            transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
+            margin-bottom: 10px;
+        }
+
+        .image-wrapper1:hover img {
+            transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+        }
+
+        .image-wrapper2:hover img {
+            transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+        }
+
+        .image-wrapper3:hover img {
+            transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+        }
+
+        .image-wrapper4:hover img {
+            transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+        }
+
+        .image-wrapper5:hover img {
+            transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+        }
+
+        .image-wrapper6:hover img {
             transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
         }
 
     </style>
+
+    <div class="background">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
 </head>
 <body>
     <div class="content">
         <!-- Imagen dentro del contenido -->
         <div class="top-image">
-            <img src="https://i.imgur.com/wY5YESQ.jpg" alt="Top Image" style="width: 100%;" class="top-image" >
-        </div>
-
-        <!-- Botón sobre la imagen -->
-        <!-- Espacio para introducir imagen -->
-        <div class="custom-button">
-            <a href="/ContactUs">
-                <img src="https://i.imgur.com/X4Zzliy.png" alt="Contact Us" style="width: 200px; height 200px: auto;">
-            </a>
+            <img src="https://i.imgur.com/wY5YESQ.jpg" alt="Top Image" style="width: 100%;" class="top-image">
         </div>
 
         <!-- Párrafo con título sobre la imagen -->
@@ -146,53 +503,58 @@
             <p>Set sail towards the horizon of cybersecurity with the knowledge of Alignment Innovation. Our full range of solutions ensures your business is protected from ever-changing digital threats, preserving its agility and compliance in the digital world.</p>
         </div>
         <div class="content">
+
+            <button>Contact Us!</button>
+
             <!--Redonditos con Engranajes-->
             <div class="image-container">
-                <div class="image-wrapper">
-                    <img src="https://i.imgur.com/UNQKuvr.png" alt="Placeholder image">
+                <div class="image-wrapper1">
+                    <img src="https://i.imgur.com/UNQKuvr.png" alt="Placeholder image" class="img-fluid">
                     <div class="image-text">
-                        <h2>ATO Assistance</h2>
-                        <p>1234567891234567891235</p>
+                        <h2>ZERO TRUST</h2>
+                        <p>
+                            At Alignment Innovation, we implement Zero Trust to ensure the security of your digital assets in today's evolving threat landscape. With Zero Trust, we adopt a proactive approach based on the principle of "never trust, always verify." We utilize granular security policies, network segmentation, multifactor authentication (MFA), and continuous traffic monitoring to protect your resources and data. Our implementation aims to secure your network against internal and external threats, reducing the risk of security breaches and data loss. By embracing Zero Trust, we help you adapt to sophisticated threats and safeguard your critical assets effectively.
+                        </p>
                     </div>
                 </div>
-                <div class="image-wrapper">
-                    <img src="https://i.imgur.com/bE9Xhhf.png" alt="Placeholder image">
+                <div class="image-wrapper2">
+                    <img src="https://i.imgur.com/bE9Xhhf.png" alt="Placeholder image" class="img-fluid">
                     <div class="image-text">
-                        <h2>ATO Assistance</h2>
-                        <p>1234567891234567891235</p>
-
+                        <h2>OBJETIVE NETWORK ANALYSIS</h2>
+                        <p>
+                            At Alignment Innovation, we optimize your computer network's efficiency and performance through Objective Network Analysis. Utilizing cutting-edge tools and techniques, we conduct comprehensive assessments of your network's components and operations, tailoring our approach to meet your specific objectives, whether it's maximizing bandwidth, minimizing latency, or enhancing security. By analyzing traffic in detail, we identify bottlenecks, anomalies, and usage trends, providing you with actionable insights. With proactive network management powered by our monitoring and analysis tools, we enable early issue detection and informed decision-making to optimize your network performance. Our ultimate goal is to improve user experience, ensure service availability, and reduce operational costs associated with network management.
+                        </p>
                     </div>
                 </div>
-                <div class="image-wrapper">
-                    <img src="https://i.imgur.com/zu2sxRb.png" alt="Placeholder image">
+                <div class="image-wrapper3">
+                    <img src="https://i.imgur.com/zu2sxRb.png" alt="Placeholder image" class="img-fluid">
                     <div class="image-text">
-                        <h2>ATO Assistance</h2>
-                        <p>1234567891234567891235</p>
+                        <h2>DIGITAL NETWORK INTELLIGENCE</h2>
+                        <p>At Alignment Innovation, we harness the power of Digital Network Intelligence (DNI) to transform your network visibility and insight. With DNI, we employ advanced capabilities and techniques to collect, analyze, and interpret data from your digital networks. Our sophisticated tools and algorithms provide deep insights into your network traffic, patterns, and behaviors, enabling you to detect and respond to cyber threats effectively. Moreover, DNI helps you identify performance bottlenecks and optimize network operations. By leveraging artificial intelligence and machine learning, we empower you to make data-driven decisions, enhance your security posture, and improve overall network performance.</p>
                     </div>
                 </div>
-                <div class="image-wrapper">
-                    <img src="https://i.imgur.com/PJIuLqF.png" alt="Placeholder image">
+                <div class="image-wrapper4">
+                    <img src="https://i.imgur.com/PJIuLqF.png" alt="Placeholder image" class="img-fluid">
                     <div class="image-text">
-                        <h2>ATO Assistance</h2>
-                        <p>1234567891234567891235</p>
+                        <h2>VULNERABILITY EVALUATION</h2>
+                        <p>At Alignment Innovation, we conduct Vulnerability Evaluation to strengthen the security measures of your digital infrastructure. Our team employs state-of-the-art techniques to identify and assess vulnerabilities across your systems and applications. Through comprehensive assessments, we pinpoint potential weaknesses and provide actionable recommendations to mitigate risks. By proactively addressing vulnerabilities, we help you enhance your security posture and protect your sensitive data from cyber threats.</p>
                     </div>
                 </div>
-                <div class="image-wrapper">
-                    <img src="https://i.imgur.com/M5WxzyB.png" alt="Placeholder image">
+                <div class="image-wrapper5">
+                    <img src="https://i.imgur.com/M5WxzyB.png" alt="Placeholder image" class="img-fluid">
                     <div class="image-text">
-                        <h2>ATO Assistance</h2>
-                        <p>1234567891234567891235</p>
+                        <h2>PENETRATION TESTING</h2>
+                        <p>At Alignment Innovation, we offer Penetration Testing services to assess the resilience of your security defenses against real-world cyber threats. Our skilled ethical hackers simulate targeted attacks to identify vulnerabilities and exploit them to gain unauthorized access to your systems. Through rigorous testing and analysis, we evaluate your security posture and provide actionable insights to strengthen your defenses. By conducting Penetration Testing regularly, we help you stay ahead of potential threats and protect your critical assets effectively.</p>
                     </div>
                 </div>
-                <div class="image-wrapper">
-                    <img src="https://i.imgur.com/WPbF3cO.png" alt="Placeholder image">
+                <div class="image-wrapper6">
+                    <img src="https://i.imgur.com/WPbF3cO.png" alt="Placeholder image" class="img-fluid">
                     <div class="image-text">
-                        <h2>ATO Assistance</h2>
-                        <p>1234567891234567891235</p>
+                        <h2>ATO ASSISTANT</h2>
+                        <p>At Alignment Innovation, we provide ATO Assistant services to streamline authorization processes and ensure compliance with regulatory requirements. Our ATO Assistant platform automates and accelerates the Authority to Operate (ATO) process, guiding you through each step from documentation to approval. With built-in compliance checks and customizable workflows, our platform helps you achieve ATO faster and more efficiently. By simplifying authorization processes, we help you minimize risks, improve operational efficiency, and accelerate your path to regulatory compliance.</p>
                     </div>
                 </div>
             </div>
         </div>
 </body>
 </html>
-
