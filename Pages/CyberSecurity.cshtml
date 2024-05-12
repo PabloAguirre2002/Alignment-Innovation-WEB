@@ -12,6 +12,49 @@
     <title>Transparent Images</title>
 
     <style> 
+        /* Estilos para los botones de imágenes DEL FINAL */
+        .image-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .image-button {
+            margin: 0 10px;
+            position: relative; /* Posición relativa para que el texto esté dentro de la imagen */
+            overflow: hidden; /* Oculta el texto que está fuera de la imagen */
+        }
+
+            .image-button img {
+                width: 160px;
+                height: 190px;
+                border: 3px solid transparent; /* Borde transparente */
+                border-radius: 10px; /* Bordes redondeados */
+                transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+            }
+
+            /* Efecto de opacidad al pasar el mouse sobre las imágenes */
+            .image-button:hover img {
+                opacity: 0.5; /* Opacidad reducida al pasar el mouse */
+                border-color: rgba(43, 209, 216, 1);
+            }
+
+            /* Estilos para el texto */
+            .image-button p {
+                position: absolute; /* Posición absoluta con respecto al contenedor */
+                top: 50%; /* Alinea el texto en el centro verticalmente */
+                left: 50%; /* Alinea el texto en el centro horizontalmente */
+                transform: translate(-50%, -50%); /* Centra el texto completamente */
+                color: rgba(43, 209, 216, 1); /* Color del texto */
+                opacity: 0; /* Inicialmente el texto es transparente */
+                transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+            }
+
+            /* Mostrar el texto al pasar el mouse sobre las imágenes */
+            .image-button:hover p {
+                opacity: 1; /* Mostrar el texto con opacidad completa */
+            }
 
         button {
             padding: 17px 40px;
@@ -171,7 +214,7 @@
         /* Estilos para el párrafo con título */
         .custom-paragraph {
             position: absolute; /* Posicionar el párrafo sobre la imagen */
-            bottom: 79.5%; /* Ajustar la posición vertical */
+            bottom: 81.5%; /* Ajustar la posición vertical */
             left: 70%; /* Ajustar la posición horizontal */
             transform: translateX(-50%); /* Centrar el párrafo */
             padding: 20px; /* Espaciado interno */
@@ -469,15 +512,20 @@
             transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
         }
 
-        .sub-title {
+        .ParrafoX p {
+            color: white;
+            background-color: rgba(204, 204, 204, 0.5);
+
+        }
+
+        .sub-title{
             text-align: center;
             color: white;
             font-size: 24px;
             margin-top: 50px; /* Ajusta según sea necesario */
             padding: 10px; /* Agregado para el recuadro alrededor del texto */
             background-color: #3B6BB0; /* Agregado para el fondo violeta */
-            border-radius: 5px;
-            background: 
+
     </style>
 
     <div class="background">
@@ -512,8 +560,16 @@
 
 
         <div>
-            <div class="sub-title">OUR CAPABILITIES</div>
+            <div class="sub-title">OUR SPECIALTIES IN THE AREA</div>
         </div>
+
+        <div>
+            <div class="ParrafoX">
+                <p>At Alignment Innovation, we take pride in leading the forefront of Zero Trust implementation, elevating standards in network and data security to unprecedented levels. Our profound expertise in Network Analysis and Penetration Testing positions us as pioneers in delivering elite cybersecurity solutions. With a highly professional approach and an unwavering dedication to excellence, we provide unparalleled protection for your digital operations.</p>
+        </div>
+        </div>
+
+
         <!-- Párrafo con título sobre la imagen -->
         
         <div class="content">
@@ -567,6 +623,52 @@
                     </div>
                 </div>
             </div>
+
+            <div>
+                <div class="sub-title">ALL OUR CAPABILITIES</div>
+            </div>
         </div>
+
+        <!--Imagenes del final-->
+       
+        <div class="image-buttons">
+            <div class="image-button" >
+                <a href="/CyberSecurity">
+                    <img src="https://i.imgur.com/VEDDy4Y.png">
+                <p>CyberSecurity</p>
+                    <a />
+            </div>
+            <div class="image-button">
+                <a href="/CallCenterService">
+                    <img src="https://i.imgur.com/KjrW4ss.png">
+                <p>Call Center Services</p>
+                    <a />
+            </div>
+            <div class="image-button">
+                <a href="/CloudMigration">
+                    <img src="https://i.imgur.com/d1wkxcz.png">
+                <p>Cloud Migration</p>
+                    <a />
+            </div>
+            <div class="image-button">
+                <a href="/ArtificialIntelligence">
+                    <img src="https://i.imgur.com/O6nG6jI.png">
+                <p>Artificial Intelligence</p>
+                    <a />
+            </div>
+            <div class="image-button">
+            <a href="/ContactUs">
+                    <img src="https://i.imgur.com/r0KexV5.png">
+                    <p>ThreatIntelligence</p>
+                    <a />
+            </div>
+            <div class="image-button">
+                <a href="/DevSecOps">
+                    <img src="https://i.imgur.com/OcgfqTR.png">
+                <p>Dev Sec Ops</p>
+                    <a />
+            </div>
+        </div>
+
 </body>
 </html>
