@@ -13,6 +13,81 @@
     <title>Transparent Images</title>
 
     <style>
+
+        /*Tarjetas que giran*/
+        .boxesContainer {
+            display: flex;
+            flex-wrap: wrap; /* Envolver las tarjetas en filas */
+            justify-content: center; /* Centrar horizontalmente las filas */
+        }
+
+        .cardBox {
+            flex: 0 0 calc(50% - 2%); /* Ancho fijo de cada tarjeta para que quepan dos en una fila, con un pequeño margen */
+            margin: 1%; /* Espaciado entre tarjetas */
+            perspective: 800px;
+            transition: all 0.3s ease 0s;
+        }
+
+        .card {
+            background: #222;
+            cursor: default;
+            height: 300px;
+            transform-style: preserve-3d;
+            transition: transform 0.4s ease 0s;
+            width: 100%;
+        }
+
+            .card:hover {
+                transform: rotateY(180deg); /* Rotación al hacer hover */
+            }
+
+            .card p {
+                margin-bottom: 1.8em;
+            }
+
+            .card .front,
+            .card .back {
+                backface-visibility: hidden;
+                box-sizing: border-box;
+                color: white;
+                display: block;
+                font-size: 1.2em;
+                height: 100%;
+                padding: 0.8em;
+                position: absolute;
+                text-align: center;
+                width: 100%;
+            }
+
+                .card .front strong {
+                    background: #fff;
+                    border-radius: 100%;
+                    color: #222;
+                    font-size: 1.5em;
+                    line-height: 30px;
+                    padding: 0 7px 4px 6px;
+                }
+
+            .card .back {
+                transform: rotateY(180deg); /* Iniciar con la cara trasera hacia adelante */
+            }
+
+                .card .back a {
+                    padding: 0.3em 0.5em;
+                    background: #333;
+                    color: #fff;
+                    text-decoration: none;
+                    border-radius: 1px;
+                    font-size: 0.9em;
+                    transition: all 0.2s ease 0s;
+                }
+
+                    .card .back a:hover {
+                        background: #fff;
+                        color: #333;
+                        text-shadow: 0 0 1px #333;
+                    }
+
         /* Estilos para los botones de imágenes DEL FINAL */
         .image-buttons {
             display: flex;
@@ -163,8 +238,8 @@
         /* Estilos para el párrafo con título */
         .custom-paragraph {
             position: absolute; /* Posicionar el párrafo sobre la imagen */
-            bottom: 81.5%; /* Ajustar la posición vertical */
-            left: 70%; /* Ajustar la posición horizontal */
+            bottom: 10%; /* Ajustar la posición vertical */
+            left: 80%; /* Ajustar la posición horizontal */
             transform: translateX(-50%); /* Centrar el párrafo */
             padding: 20px; /* Espaciado interno */
             border-radius: 5px; /* Añadir bordes redondeados */
@@ -184,90 +259,6 @@
             flex-wrap: wrap;
         }
 
-        .image-wrapper1 {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px; /* Ajustar el margen */
-            background-color: rgba(204, 204, 204, 0.5); /* Fondo gris translúcido */
-            padding: 10px;
-            overflow: hidden; /* Oculta el contenido que se desborda */
-            max-width: calc(33.33% - 40px); /* Ancho máximo para evitar que las imágenes se expandan demasiado */
-            position: relative; /* Añadir posición relativa para contener el pseudo-elemento */
-            border-radius: 5px; /* Añadir bordes redondeados */
-            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
-        }
-
-        .image-wrapper2 {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px; /* Ajustar el margen */
-            background-color: rgba(204, 204, 204, 0.5); /* Fondo gris translúcido */
-            padding: 10px;
-            overflow: hidden; /* Oculta el contenido que se desborda */
-            max-width: calc(33.33% - 40px); /* Ancho máximo para evitar que las imágenes se expandan demasiado */
-            position: relative; /* Añadir posición relativa para contener el pseudo-elemento */
-            border-radius: 5px; /* Añadir bordes redondeados */
-            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
-        }
-
-        .image-wrapper3 {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px; /* Ajustar el margen */
-            background-color: rgba(204, 204, 204, 0.5); /* Fondo gris translúcido */
-            padding: 10px;
-            overflow: hidden; /* Oculta el contenido que se desborda */
-            max-width: calc(33.33% - 40px); /* Ancho máximo para evitar que las imágenes se expandan demasiado */
-            position: relative; /* Añadir posición relativa para contener el pseudo-elemento */
-            border-radius: 5px; /* Añadir bordes redondeados */
-            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
-        }
-
-        .image-wrapper4 {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px; /* Ajustar el margen */
-            background-color: rgba(204, 204, 204, 0.5); /* Fondo gris translúcido */
-            padding: 10px;
-            overflow: hidden; /* Oculta el contenido que se desborda */
-            max-width: calc(33.33% - 40px); /* Ancho máximo para evitar que las imágenes se expandan demasiado */
-            position: relative; /* Añadir posición relativa para contener el pseudo-elemento */
-            border-radius: 5px; /* Añadir bordes redondeados */
-            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
-        }
-
-        .image-wrapper5 {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px; /* Ajustar el margen */
-            background-color: rgba(204, 204, 204, 0.5); /* Fondo gris translúcido */
-            padding: 10px;
-            overflow: hidden; /* Oculta el contenido que se desborda */
-            max-width: calc(33.33% - 40px); /* Ancho máximo para evitar que las imágenes se expandan demasiado */
-            position: relative; /* Añadir posición relativa para contener el pseudo-elemento */
-            border-radius: 5px; /* Añadir bordes redondeados */
-            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
-        }
-
-        .image-wrapper6 {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 20px; /* Ajustar el margen */
-            background-color: rgba(204, 204, 204, 0.5); /* Fondo gris translúcido */
-            padding: 10px;
-            overflow: hidden; /* Oculta el contenido que se desborda */
-            max-width: calc(33.33% - 40px); /* Ancho máximo para evitar que las imágenes se expandan demasiado */
-            position: relative; /* Añadir posición relativa para contener el pseudo-elemento */
-            border-radius: 5px; /* Añadir bordes redondeados */
-            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
-        }
-
 
         .img-fluid {
             background-color: #ccc; /* Fondo gris */
@@ -277,192 +268,6 @@
         .image-text {
             margin-top: 10px; /* Espacio entre la imagen y el texto */
             text-align: center; /* Alinear texto al centro */
-        }
-
-        .image-wrapper1:hover {
-            background: linear-gradient(105deg, rgba(14, 230, 83, 1), rgba(72, 72, 72, 1)) /* Recupera la opacidad completa al pasar el mouse */
-        }
-
-        .image-wrapper2:hover {
-            background: linear-gradient(105deg, rgba(229, 13, 13, 1), rgba(72, 72, 72, 1)) /* Recupera la opacidad completa al pasar el mouse */
-        }
-
-        .image-wrapper3:hover {
-            background: linear-gradient(105deg, rgba(230, 111, 14, 1), rgba(72, 72, 72, 1)) /* Recupera la opacidad completa al pasar el mouse */
-        }
-
-        .image-wrapper4:hover {
-            background: linear-gradient(105deg, rgba(46, 14, 230, 1), rgba(72, 72, 72, 1)) /* Recupera la opacidad completa al pasar el mouse */
-        }
-
-        .image-wrapper5:hover {
-            background: linear-gradient(105deg, rgba(230, 14, 180, 1), rgba(72, 72, 72, 1)) /* Recupera la opacidad completa al pasar el mouse */
-        }
-
-        .image-wrapper6:hover {
-            background: linear-gradient(105deg, rgba(230, 204, 14, 1), rgba(72, 72, 72, 1)) /* Recupera la opacidad completa al pasar el mouse */
-        }
-
-        .image-wrapper1::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0); /* Fondo blanco transparente */
-            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
-            z-index: -1;
-        }
-
-        .image-wrapper2::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0); /* Fondo blanco transparente */
-            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
-            z-index: -1;
-        }
-
-        .image-wrapper3::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0); /* Fondo blanco transparente */
-            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
-            z-index: -1;
-        }
-
-        .image-wrapper4::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0); /* Fondo blanco transparente */
-            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
-            z-index: -1;
-        }
-
-        .image-wrapper5::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0); /* Fondo blanco transparente */
-            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
-            z-index: -1;
-        }
-
-        .image-wrapper6::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0); /* Fondo blanco transparente */
-            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
-            z-index: -1;
-        }
-
-        .image-wrapper1:hover::before {
-            background: linear-gradient(120deg, rgba(14, 230, 83, 1), rgba(224, 16, 16, 1), rgba(216, 122, 19, 1), rgba(45, 21, 215, 1), rgba(218, 22, 216, 1), rgba(194, 204, 18, 1)) /* Recupera la opacidad completa al pasar el mouse */
-        }
-
-        .image-wrapper2:hover::before {
-            background: linear-gradient(120deg, rgba(14, 230, 83, 1), rgba(224, 16, 16, 1), rgba(216, 122, 19, 1), rgba(45, 21, 215, 1), rgba(218, 22, 216, 1), rgba(194, 204, 18, 1)) /* Recupera la opacidad completa al pasar el mouse */
-        }
-
-        .image-wrapper3:hover::before {
-            background: linear-gradient(120deg, rgba(14, 230, 83, 1), rgba(224, 16, 16, 1), rgba(216, 122, 19, 1), rgba(45, 21, 215, 1), rgba(218, 22, 216, 1), rgba(194, 204, 18, 1)) /* Recupera la opacidad completa al pasar el mouse */
-        }
-
-        .image-wrapper4:hover::before {
-            background: linear-gradient(120deg, rgba(14, 230, 83, 1), rgba(224, 16, 16, 1), rgba(216, 122, 19, 1), rgba(45, 21, 215, 1), rgba(218, 22, 216, 1), rgba(194, 204, 18, 1)) /* Recupera la opacidad completa al pasar el mouse */
-        }
-
-        .image-wrapper5:hover::before {
-            background: linear-gradient(120deg, rgba(14, 230, 83, 1), rgba(224, 16, 16, 1), rgba(216, 122, 19, 1), rgba(45, 21, 215, 1), rgba(218, 22, 216, 1), rgba(194, 204, 18, 1)) /* Recupera la opacidad completa al pasar el mouse */
-        }
-
-        .image-wrapper6:hover::before {
-            background: linear-gradient(120deg, rgba(14, 230, 83, 1), rgba(224, 16, 16, 1), rgba(216, 122, 19, 1), rgba(45, 21, 215, 1), rgba(218, 22, 216, 1), rgba(194, 204, 18, 1)) /* Recupera la opacidad completa al pasar el mouse */
-        }
-
-        .image-wrapper1 img {
-            max-width: 100%; /* Ancho máximo para las imágenes */
-            height: auto;
-            transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
-            margin-bottom: 10px;
-        }
-
-        .image-wrapper2 img {
-            max-width: 100%; /* Ancho máximo para las imágenes */
-            height: auto;
-            transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
-            margin-bottom: 10px;
-        }
-
-        .image-wrapper3 img {
-            max-width: 100%; /* Ancho máximo para las imágenes */
-            height: auto;
-            transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
-            margin-bottom: 10px;
-        }
-
-        .image-wrapper4 img {
-            max-width: 100%; /* Ancho máximo para las imágenes */
-            height: auto;
-            transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
-            margin-bottom: 10px;
-        }
-
-        .image-wrapper5 img {
-            max-width: 100%; /* Ancho máximo para las imágenes */
-            height: auto;
-            transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
-            margin-bottom: 10px;
-        }
-
-        .image-wrapper6 img {
-            max-width: 100%; /* Ancho máximo para las imágenes */
-            height: auto;
-            transition: transform 0.3s ease; /* Transición suave para el cambio de tamaño */
-            margin-bottom: 10px;
-        }
-
-        .image-wrapper1:hover img {
-            transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
-        }
-
-        .image-wrapper2:hover img {
-            transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
-        }
-
-        .image-wrapper3:hover img {
-            transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
-        }
-
-        .image-wrapper4:hover img {
-            transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
-        }
-
-        .image-wrapper5:hover img {
-            transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
-        }
-
-        .image-wrapper6:hover img {
-            transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
         }
 
         .ParrafoX p {
@@ -477,7 +282,15 @@
             margin-top: 50px; /* Ajusta según sea necesario */
             padding: 10px; /* Agregado para el recuadro alrededor del texto */
             background-color: #3B6BB0; /* Agregado para el fondo violeta */
+        }
 
+        /* Nuevo selector CSS más específico para .sub-title */
+        .sub-title-container .sub-title {
+            background-color: rgba(204, 204, 204, 0.5); /* Color de fondo */
+            padding: 10px; /* Espaciado interno */
+            text-align: center; /* Alinear texto al centro */
+            margin-top: 20px; /* Espaciado superior */
+        }
     </style>
 
     <div class="background">
@@ -493,16 +306,16 @@
         <!-- Imagen dentro del contenido -->
         <div class="top-image">
             <img src="https://i.imgur.com/4bF16XG.png" alt="Top Image" style="width: 100%;" class="top-image">
+            <div class="custom-paragraph">
+                <h1>CyberSecurity</h1>
+                <p></p>
+                <h2>Build your Secure Digital Future</h2>
+                <p>Set sail towards the horizon of cybersecurity with the knowledge of Alignment Innovation. Our full range of solutions ensures your business is protected from ever-changing digital threats, preserving its agility and compliance in the digital world.</p>
+                <!-- Botón Contact Us -->
+                <a href="ContactUs"><button>Contact Us!</button></a>
+            </div>
         </div>
 
-        <div class="custom-paragraph">
-            <h1>CyberSecurity</h1>
-            <p></p>
-            <h2>Build your Secure Digital Future</h2>
-            <p>Set sail towards the horizon of cybersecurity with the knowledge of Alignment Innovation. Our full range of solutions ensures your business is protected from ever-changing digital threats, preserving its agility and compliance in the digital world.</p>
-            <!-- Botón Contact Us -->
-            <a href="ContactUs"><button>Contact Us!</button></a>
-        </div>
 
 
         <div>
@@ -515,68 +328,114 @@
             </div>
         </div>
 
+        <div class="boxesContainer">
 
-        <!-- Párrafo con título sobre la imagen -->
-
-        <div class="content">
-
-            <!--Redonditos con Engranajes-->
-            <div class="image-container">
-                <div class="image-wrapper1">
-                    <img src="https://i.imgur.com/UNQKuvr.png" alt="Placeholder image" class="img-fluid">
-                    <div class="image-text">
-                        <h2>ZERO TRUST IN YOUR NETWORK</h2>
-                        <p>
-                            At Alignment Innovation, we implement Zero Trust to ensure the security of your digital assets in today's evolving threat landscape. With Zero Trust, we adopt a proactive approach based on the principle of "never trust, always verify." We utilize granular security policies, network segmentation, multifactor authentication (MFA), and continuous traffic monitoring to protect your resources and data. Our implementation aims to secure your network against internal and external threats, reducing the risk of security breaches and data loss. By embracing Zero Trust, we help you adapt to sophisticated threats and safeguard your critical assets effectively.
-                        </p>
+            <div class="cardBox">
+                <div class="card">
+                    <div class="front">
+                        <h3>Card One</h3>
+                        <p>Hover to flip</p>
+                        <strong>&#x21bb;</strong>
+                        <img src="https://i.imgur.com/KGyK5rH.png">
                     </div>
-                </div>
-                <div class="image-wrapper2">
-                    <img src="https://i.imgur.com/bE9Xhhf.png" alt="Placeholder image" class="img-fluid">
-                    <div class="image-text">
-                        <h2>OBJETIVE NETWORK ANALYSIS</h2>
-                        <p>
-                            At Alignment Innovation, we optimize your computer network's efficiency and performance through Objective Network Analysis. Utilizing cutting-edge tools and techniques, we conduct comprehensive assessments of your network's components and operations, tailoring our approach to meet your specific objectives, whether it's maximizing bandwidth, minimizing latency, or enhancing security. By analyzing traffic in detail, we identify bottlenecks, anomalies, and usage trends, providing you with actionable insights. With proactive network management powered by our monitoring and analysis tools, we enable early issue detection and informed decision-making to optimize your network performance. Our ultimate goal is to improve user experience, ensure service availability, and reduce operational costs associated with network management.
-                        </p>
-                    </div>
-                </div>
-                <div class="image-wrapper3">
-                    <img src="https://i.imgur.com/zu2sxRb.png" alt="Placeholder image" class="img-fluid">
-                    <div class="image-text">
-                        <h2>DIGITAL NETWORK INTELLIGENCE</h2>
-                        <p>At Alignment Innovation, we harness the power of Digital Network Intelligence (DNI) to transform your network visibility and insight. With DNI, we employ advanced capabilities and techniques to collect, analyze, and interpret data from your digital networks. Our sophisticated tools and algorithms provide deep insights into your network traffic, patterns, and behaviors, enabling you to detect and respond to cyber threats effectively. Moreover, DNI helps you identify performance bottlenecks and optimize network operations. By leveraging artificial intelligence and machine learning, we empower you to make data-driven decisions, enhance your security posture, and improve overall network performance.</p>
-                    </div>
-                </div>
-                <div class="image-wrapper4">
-                    <img src="https://i.imgur.com/PJIuLqF.png" alt="Placeholder image" class="img-fluid">
-                    <div class="image-text">
-                        <h2>VULNERABILITY EVALUATION</h2>
-                        <p>At Alignment Innovation, we conduct Vulnerability Evaluation to strengthen the security measures of your digital infrastructure. Our team employs state-of-the-art techniques to identify and assess vulnerabilities across your systems and applications. Through comprehensive assessments, we pinpoint potential weaknesses and provide actionable recommendations to mitigate risks. By proactively addressing vulnerabilities, we help you enhance your security posture and protect your sensitive data from cyber threats.</p>
-                    </div>
-                </div>
-                <div class="image-wrapper5">
-                    <img src="https://i.imgur.com/M5WxzyB.png" alt="Placeholder image" class="img-fluid">
-                    <div class="image-text">
-                        <h2>PENETRATION TESTING</h2>
-                        <p>At Alignment Innovation, we offer Penetration Testing services to assess the resilience of your security defenses against real-world cyber threats. Our skilled ethical hackers simulate targeted attacks to identify vulnerabilities and exploit them to gain unauthorized access to your systems. Through rigorous testing and analysis, we evaluate your security posture and provide actionable insights to strengthen your defenses. By conducting Penetration Testing regularly, we help you stay ahead of potential threats and protect your critical assets effectively.</p>
-                    </div>
-                </div>
-                <div class="image-wrapper6">
-                    <img src="https://i.imgur.com/WPbF3cO.png" alt="Placeholder image" class="img-fluid">
-                    <div class="image-text">
-                        <h2>ATO ASSISTANT</h2>
-                        <p>At Alignment Innovation, we provide ATO Assistant services to streamline authorization processes and ensure compliance with regulatory requirements. Our ATO Assistant platform automates and accelerates the Authority to Operate (ATO) process, guiding you through each step from documentation to approval. With built-in compliance checks and customizable workflows, our platform helps you achieve ATO faster and more efficiently. By simplifying authorization processes, we help you minimize risks, improve operational efficiency, and accelerate your path to regulatory compliance.</p>
+                    <div class="back">
+                        <h3>Back Side One</h3>
+                        <p>Content in card one</p>
+                        <a href="#">Button 1</a>
+                        <img src="https://i.imgur.com/pljtSDh.png">
                     </div>
                 </div>
             </div>
 
-            <div>
-                <div class="sub-title">ALL OUR CAPABILITIES</div>
+            <div class="cardBox">
+                <div class="card">
+                    <div class="front">
+                        <h3>Card Two</h3>
+                        <p>Hover to flip</p>
+                        <strong>&#x21bb;</strong>
+                        <img src="https://i.imgur.com/lTIKQMw.png">
+                    </div>
+                    <div class="back">
+                        <h3>Back Side Two</h3>
+                        <p>Content in card two</p>
+                        <a href="#">Button 2</a>
+                        <img src="https://i.imgur.com/fmWkNnG.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardBox">
+                <div class="card">
+                    <div class="front">
+                        <h3>Card Three</h3>
+                        <p>Hover to flip</p>
+                        <strong>&#x21bb;</strong>
+                        <img src="https://i.imgur.com/xHd9WdK.png">
+                    </div>
+                    <div class="back">
+                        <h3>Back Side Three</h3>
+                        <p>Content in card three</p>
+                        <a href="#">Button 3</a>
+                        <img src="https://i.imgur.com/QbtjQPp.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardBox">
+                <div class="card">
+                    <div class="front">
+                        <h3>Card Four</h3>
+                        <p>Hover to flip</p>
+                        <strong>&#x21bb;</strong>
+                        <img src="https://i.imgur.com/NC8uhW4.png">
+                    </div>
+                    <div class="back">
+                        <h3>Back Side Four</h3>
+                        <p>Content in card four</p>
+                        <a href="#">Button 4</a>
+                        <img src="https://i.imgur.com/FLw7O1a.png">
+                    </div>
+                </div>
+            </div>
+            <div class="cardBox">
+                <div class="card">
+                    <div class="front">
+                        <h3>Card Five</h3>
+                        <p>Hover to flip</p>
+                        <strong>&#x21bb;</strong>
+                        <img src="https://i.imgur.com/z9gii0j.png">
+                    </div>
+                    <div class="back">
+                        <h3>Back Side Five</h3>
+                        <p>Content in card five</p>
+                        <a href="#">Button 5</a>
+                        <img src="https://i.imgur.com/2vPxqyW.png">
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardBox">
+                <div class="card">
+                    <div class="front">
+                        <h3>Card Six</h3>
+                        <p>Hover to flip</p>
+                        <strong>&#x21bb;</strong>
+                        <img src="https://i.imgur.com/ot0nSkO.png">
+                    </div>
+                    <div class="back">
+                        <h3>Back Side Six</h3>
+                        <p>Content in card six</p>
+                        <a href="#">Button 6</a>
+                        <img src="https://i.imgur.com/KGyK5rH.png">
+                    </div>
+                </div>
             </div>
         </div>
 
         <!--Imagenes del final-->
-
+        <div>
+        <div class="sub-title">OUR SPECIALTIES IN THE AREA</div>
+        </div>
         <div class="image-buttons">
             <div class="image-button">
                 <a href="/CyberSecurity">
