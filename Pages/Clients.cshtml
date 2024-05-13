@@ -7,13 +7,42 @@
 <html lang="en">
 <head>
     <style>
-        /* Esta es la imagen de Fondo de cuadrados */
-        body {
-            background-image: url('https://i.imgur.com/UFKspfB.png');
-            background-size: cover;
-            background-position: center;
+        <meta charset="utf-8" >
+        <style >
+        .background--custom {
+            background-color: #212020;
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            overflow: hidden;
+            z-index: -2;
+            top: 0;
+            left: 0;
+        }
+
+        canvas#canvas {
+            z-index: -1;
+            position: absolute;
+            width: 100%;
+            height: 60%;
+            transform: rotate(-60deg) scale(2) translateY(0%);
+            --gradient-color-1: #0800FF;
+            --gradient-color-2: #F46E6E;
+            --gradient-color-3: #C400FF;
+            --gradient-color-4: #FFAF06;
+            --gradient-speed: 0.000002;
         }
     </style>
 </head>
+<body>
+    <div class="background--custom">
+        <canvas id="canvas" />
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/greentfrapp/pocoloco@minigl/minigl.js"></script>
+    <script>
+        var gradient = new Gradient();
+        gradient.initGradient("#canvas");
+    </script>
+</body>
 </html>
 

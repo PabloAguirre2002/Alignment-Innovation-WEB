@@ -21,10 +21,6 @@ body {
     margin-bottom: 60px;
 }
 
-body {
-    background-color: #415787; /* Cambia el color de fondo según tu preferencia */
-}
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -190,3 +186,4 @@ h1{
         height: 260px;
     }
 }
+
