@@ -6,13 +6,464 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Images</title>
+
     <style>
-        /* Esta es la imagen de Fondo de cuadrados */
-        body {
-            background-image: url('https://i.imgur.com/UFKspfB.png');
-            background-size: cover;
-            background-position: center;
+
+        /*Tarjetas que giran*/
+        .boxesContainer {
+            display: flex;
+            flex-wrap: wrap; /* Envolver las tarjetas en filas */
+            justify-content: center; /* Centrar horizontalmente las filas */
         }
+
+        .cardBox {
+            flex: 0 0 calc(50% - 2%); /* Ancho fijo de cada tarjeta para que quepan dos en una fila, con un pequeño margen */
+            margin: 1%; /* Espaciado entre tarjetas */
+            perspective: 800px;
+            transition: all 0.3s ease 0s;
+        }
+
+        .card {
+            background-image: url('https://i.imgur.com/XM3Qmqo.png');
+            cursor: default;
+            height: 300px;
+            transform-style: preserve-3d;
+            transition: transform 0.4s ease 0s;
+            width: 100%;
+        }
+
+            .card:hover {
+                transform: rotateY(180deg); /* Rotación al hacer hover */
+            }
+
+            .card p {
+                margin-bottom: 1.8em;
+            }
+
+            .card .front,
+            .card .back {
+                backface-visibility: hidden;
+                box-sizing: border-box;
+                color: white;
+                display: block;
+                font-size: 1.2em;
+                height: 100%;
+                padding: 0.8em;
+                position: absolute;
+                text-align: center;
+                width: 100%;
+            }
+
+                .card .front strong {
+                    background: #fff;
+                    border-radius: 100%;
+                    color: #222;
+                    font-size: 1.5em;
+                    line-height: 30px;
+                    padding: 0 7px 4px 6px;
+                }
+
+            .card .back {
+                background-image: repeating-linear-gradient(45deg, rgba(97,97,97,0.1) 0px, rgba(97,97,97,0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgb(43,43,43),rgb(43,43,43));
+                background-size: cover;
+                transform: rotateY(180deg);
+            }
+
+                .card .back a {
+                    padding: 0.3em 0.5em;
+                    background: #333;
+                    color: #fff;
+                    text-decoration: none;
+                    border-radius: 1px;
+                    font-size: 0.9em;
+                    transition: all 0.2s ease 0s;
+                }
+
+                    .card .back a:hover {
+                        background: #fff;
+                        color: #333;
+                        text-shadow: 0 0 1px #333;
+                    }
+
+        /* Estilos para los botones de imágenes DEL FINAL */
+        .image-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .image-button {
+            margin: 0 10px;
+            position: relative; /* Posición relativa para que el texto esté dentro de la imagen */
+            overflow: hidden; /* Oculta el texto que está fuera de la imagen */
+        }
+
+            .image-button img {
+                width: 160px;
+                height: 190px;
+                border: 3px solid transparent; /* Borde transparente */
+                border-radius: 10px; /* Bordes redondeados */
+                transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+            }
+
+            /* Efecto de opacidad al pasar el mouse sobre las imágenes */
+            .image-button:hover img {
+                opacity: 0.5; /* Opacidad reducida al pasar el mouse */
+                border-color: rgba(43, 209, 216, 1);
+            }
+
+            /* Estilos para el texto */
+            .image-button p {
+                position: absolute; /* Posición absoluta con respecto al contenedor */
+                top: 50%; /* Alinea el texto en el centro verticalmente */
+                left: 50%; /* Alinea el texto en el centro horizontalmente */
+                transform: translate(-50%, -50%); /* Centra el texto completamente */
+                color: rgba(43, 209, 216, 1); /* Color del texto */
+                opacity: 0; /* Inicialmente el texto es transparente */
+                transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+            }
+
+            /* Mostrar el texto al pasar el mouse sobre las imágenes */
+            .image-button:hover p {
+                opacity: 1; /* Mostrar el texto con opacidad completa */
+            }
+
+        button {
+            padding: 17px 40px;
+            border-radius: 50px;
+            cursor: pointer;
+            border: 0;
+            background-color: white;
+            box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 15px;
+            transition: all 0.5s ease;
+        }
+
+            button:hover {
+                letter-spacing: 3px;
+                background-color: hsl(261deg 80% 48%);
+                color: hsl(0, 0%, 100%);
+                box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+            }
+
+            button:active {
+                letter-spacing: 3px;
+                background-color: hsl(261deg 80% 48%);
+                color: hsl(0, 0%, 100%);
+                box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+                transform: translateY(10px);
+                transition: 100ms;
+            }
+
+        /* Esta es la imagen de Fondo de cuadrados */
+        .background {
+            position: absolute;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to right, #ad0076, #9da800);
+            display: flex;
+            flex-grow: 1;
+            z-index: -1;
+        }
+
+            .background div {
+                position: absolute;
+                border-radius: 100%;
+                height: 0;
+                filter: blur(240vw);
+                opacity: 0.4;
+            }
+
+                .background div:nth-child(1) {
+                    background: linear-gradient(132deg, #00ffee 0.00%, #000000 100.00%);
+                    width: 46%;
+                    padding-top: 46%;
+                    left: 78%;
+                    top: 0%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(2) {
+                    background: linear-gradient(132deg, #ff0000 0.00%, #ff0000 100.00%);
+                    width: 40%;
+                    padding-top: 40%;
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(3) {
+                    background: linear-gradient(132deg, #e100ff 0.00%, #fb00ff 100.00%);
+                    width: 30%;
+                    padding-top: 30%;
+                    left: 80%;
+                    top: 80%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Estilos para la imagen dentro del contenido */
+        .top-image {
+            width: 100%; /* Ajusta el ancho según sea necesario */
+            margin-top: -100px; /* Ajusta el margen superior según sea necesario para evitar solapamientos */
+            position: relative; /* Añadir posición relativa para permitir posicionar elementos hijos */
+            border-radius: 20px; /* Añadir bordes redondeados */
+            overflow: hidden; /* Ocultar el desbordamiento para que el desenfoque se limite al contenedor */
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Aplicar efecto de sombra difuminada */
+        }
+        /* Estilos para el párrafo con título */
+        .custom-paragraph {
+            position: absolute; /* Posicionar el párrafo sobre la imagen */
+            bottom: 10%; /* Ajustar la posición vertical */
+            left: 80%; /* Ajustar la posición horizontal */
+            transform: translateX(-50%); /* Centrar el párrafo */
+            padding: 20px; /* Espaciado interno */
+            border-radius: 5px; /* Añadir bordes redondeados */
+            font-size: 16px; /* Tamaño de fuente */
+            text-align: center; /* Alinear texto al centro */
+            z-index: 1; /* Asegurar que el párrafo esté sobre la imagen */
+            width: 383px;
+            height: auto; /* Cambiado a 'auto' para adaptarse al contenido */
+            color: white;
+            background-color: rgba(128, 128, 128, 0.5); /* Fondo gris translúcido */
+            border-radius: 10px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+
+        .img-fluid {
+            background-color: #ccc; /* Fondo gris */
+            border-radius: 50%; /* Hace que la imagen sea circular */
+        }
+
+        .image-text {
+            margin-top: 10px; /* Espacio entre la imagen y el texto */
+            text-align: center; /* Alinear texto al centro */
+        }
+
+        .ParrafoX p {
+            color: white;
+            background-color: rgba(204, 204, 204, 0.5);
+        }
+
+        .sub-title {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            margin-top: 50px; /* Ajusta según sea necesario */
+            padding: 10px; /* Agregado para el recuadro alrededor del texto */
+            background-color: #3B6BB0; /* Agregado para el fondo violeta */
+        }
+
+        /* Nuevo selector CSS más específico para .sub-title */
+        .sub-title-container .sub-title {
+            background-color: rgba(204, 204, 204, 0.5); /* Color de fondo */
+            padding: 10px; /* Espaciado interno */
+            text-align: center; /* Alinear texto al centro */
+            margin-top: 20px; /* Espaciado superior */
+        }
+
+        .circle-image {
+            width: 150px; /* Ajusta el tamaño de la imagen circular según tus necesidades */
+            height: 150px; /* Ajusta el tamaño de la imagen circular según tus necesidades */
+            background-image: url('https://i.imgur.com/YNb0qdC.png'); /* Reemplaza 'url_de_tu_imagen_redonda.jpg' con la URL de tu imagen redonda */
+            background-size: cover;
+            border-radius: 50%; /* Esto hace que la imagen tenga forma de círculo */
+            margin: 0 auto; /* Esto centra la imagen horizontalmente */
+        }
+
     </style>
+
+    <div class="background">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
 </head>
+<body>
+    <div class="content">
+        <!-- Imagen dentro del contenido -->
+        <div class="top-image">
+            <img src="https://i.imgur.com/HkPl2LO.png" alt="Top Image" style="width: 100%;" class="top-image">
+            <div class="custom-paragraph">
+                <h1>Artificial Intelligence</h1>
+                <p>At Alignment Innovation, we specialize in harnessing the power of artificial intelligence to drive innovation and efficiency. With our cutting-edge solutions, we empower businesses to thrive in today's rapidly changing landscape. Join us as we shape the future of technology together.</p>
+                <!-- Botón Contact Us -->
+                <a href="ContactUs"><button>Contact Us!</button></a>
+            </div>
+        </div>
+
+
+
+        <div>
+            <div class="sub-title">OUR SPECIALTIES IN THE AREA</div>
+        </div>
+
+        <div>
+            <div class="ParrafoX">
+                <p>
+                    In a constantly evolving world, innovation is the key to staying ahead. At Alignment Innovation, we are dedicated to accelerating tomorrow's innovations by leveraging artificial intelligence today. We unlock the transformative potential of AI, offering solutions ranging from edge AI to deep learning. By harnessing these advanced technologies, we help drive efficiency, foster innovation, and create a competitive advantage for our clients across all aspects of their operations. Join us on the journey towards the future, where AI drives progress and unlocks new opportunities for your company.
+                </p>
+            </div>
+        </div>
+
+        <div class="boxesContainer">
+
+            <div class="cardBox">
+                <div class="card">
+                    <div class="front">
+                        <h1>NLP</h1>
+                        <p>Hover to flip</p>
+                        <div class="circle-image"></div>
+                    </div>
+                    <div class="back">
+                        <h1>NLP</h1>
+                        <h6>Natural Language Processing</h6>
+                        <p>At Alignment Innovation, we master Natural Language Processing for effective communication between humans and machines. Our expertise ensures precise interaction in applications like chatbots and sentiment analysis, establishing us as leaders in this technology.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardBox">
+                <div class="card">
+                    <div class="front">
+                        <h1>RPA</h1>
+                        <p>Hover to flip</p>
+                        <div class="circle-image"></div>
+                    </div>
+                    <div class="back">
+                        <h1>RPA</h1>
+                        <h6>Robotic Process Automation</h6>
+                        <p>Robotic Process Automation is fundamental at Alignment Innovation. Our RPA expertise automates routine tasks, unleashing our teams' potential for innovation and growth.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardBox">
+                <div class="card">
+                    <div class="front">
+                        <h1>MLOps</h1>
+                        <p>Hover to flip</p>
+                        <div class="circle-image"></div>
+                    </div>
+                    <div class="back">
+                        <h1>MLOps</h1>
+                        <p>At Alignment Innovation, we implement MLOps to efficiently manage Machine Learning models in production. Our integrated practice maximizes model performance, ensuring a sustainable competitive advantage.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardBox">
+                <div class="card">
+                    <div class="front">
+                        <h1>Edge AI</h1>
+                        <p>Hover to flip</p>
+                        <div class="circle-image"></div>
+                    </div>
+                    <div class="back">
+                        <h1>Edge AI</h1>
+                        <h6>Edge Artificial Intelligence</h6>
+                        <p>We excel in Edge Artificial Intelligence implementation. At Alignment Innovation, we offer precise and rapid solutions for IoT and autonomous vehicles applications, transforming our clients' operations.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardBox">
+                <div class="card">
+                    <div class="front">
+                        <h1>Machine Learning</h1>
+                        <p>Hover to flip</p>
+                        <div class="circle-image"></div>
+                    </div>
+                    <div class="back">
+                        <h1>Machine Learning</h1>
+                        <p>Machine Learning is essential at Alignment Innovation. Our expertise enables us to develop customized models that optimize business processes and deliver tangible value. Trust us to lead innovation and success with Machine Learning.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cardBox">
+                <div class="card">
+                    <div class="front">
+                        <h1>Deep Learning</h1>
+                        <p>Hover to flip</p>
+                        <div class="circle-image"></div>
+                    </div>
+                    <div class="back">
+                        <h1>Deep Learning</h1>
+                        <p>At Alignment Innovation, we leverage Deep Learning to extract valuable insights from large datasets. Our expertise allows us to deliver advanced solutions that drive efficiency and accuracy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Imagenes del final-->
+
+        <div>
+            <div class="sub-title">ALL OUR CAPABILITIES</div>
+        </div>
+    </div>
+
+    <div class="image-buttons">
+        <div class="image-button">
+            <a href="/CyberSecurity">
+                <img src="https://i.imgur.com/VEDDy4Y.png">
+                <p>CyberSecurity</p>
+                <a />
+        </div>
+        <div class="image-button">
+            <a href="CallCenterService">
+                <img src="https://i.imgur.com/KjrW4ss.png">
+                <p>Call Center Services</p>
+                <a />
+        </div>
+        <div class="image-button">
+            <a href="CloudMigration">
+                <img src="https://i.imgur.com/d1wkxcz.png">
+                <p>Cloud Migration</p>
+                <a />
+        </div>
+        <div class="image-button">
+            <a href="/ArtificialIntelligence">
+                <img src="https://i.imgur.com/O6nG6jI.png">
+                <p>Artificial Intelligence</p>
+                <a />
+        </div>
+        <div class="image-button">
+            <a href="ThreatIntelligence">
+                <img src="https://i.imgur.com/r0KexV5.png">
+                <p>Threat Intelligence</p>
+                <a />
+        </div>
+        <div class="image-button">
+            <a href="/DevSecOps">
+                <img src="https://i.imgur.com/OcgfqTR.png">
+                <p>Dev Sec Ops</p>
+                <a />
+        </div>
+    </div>
+
+</body>
 </html>
