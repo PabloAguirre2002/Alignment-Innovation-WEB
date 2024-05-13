@@ -13,81 +13,47 @@
 
     <style>
 
-        /*Tarjetas que giran*/
+       /*PARTE DEL MEDIO*/
+
+        /* Estilos para los contenedores de los rectángulos */
         .boxesContainer {
             display: flex;
-            flex-wrap: wrap; /* Envolver las tarjetas en filas */
-            justify-content: center; /* Centrar horizontalmente las filas */
+            flex-wrap: wrap;
+            justify-content: space-between; /* Distribuye los elementos uniformemente en la fila */
         }
 
-        .cardBox {
-            flex: 0 0 calc(50% - 2%); /* Ancho fijo de cada tarjeta para que quepan dos en una fila, con un pequeño margen */
-            margin: 1%; /* Espaciado entre tarjetas */
-            perspective: 800px;
-            transition: all 0.3s ease 0s;
+        /* Estilos para cada rectángulo */
+        .image-wrapper {
+            width: calc(50% - 40px); /* Ajusta el ancho para que entren dos en una fila */
+            margin: 20px; /* Ajusta el margen */
+            background-color: rgba(204, 204, 204, 0.5); /* Fondo gris translúcido */
+            padding: 10px;
+            overflow: hidden; /* Oculta el contenido que se desborda */
+            position: relative; /* Añadir posición relativa para contener el pseudo-elemento */
+            border-radius: 5px; /* Añadir bordes redondeados */
+            transition: background-color 0.3s ease; /* Transición suave para el cambio de opacidad */
+            cursor: pointer; /* Cambiar el cursor al pasar sobre el elemento */
         }
 
-        .card {
-            background-image: url('https://i.imgur.com/XM3Qmqo.png');
-            cursor: default;
-            height: 300px;
-            transform-style: preserve-3d;
-            transition: transform 0.4s ease 0s;
-            width: 100%;
-        }
-
-            .card:hover {
-                transform: rotateY(180deg); /* Rotación al hacer hover */
+            /* Efecto de hover */
+            .image-wrapper:hover {
+                background-color: rgba(0, 0, 0, 0.8); /* Cambia el color de fondo a negro */
             }
 
-            .card p {
-                margin-bottom: 1.8em;
-            }
-
-            .card .front,
-            .card .back {
-                backface-visibility: hidden;
-                box-sizing: border-box;
-                color: white;
-                display: block;
-                font-size: 1.2em;
-                height: 100%;
-                padding: 0.8em;
-                position: absolute;
-                text-align: center;
-                width: 100%;
-            }
-
-                .card .front strong {
-                    background: #fff;
-                    border-radius: 100%;
-                    color: #222;
-                    font-size: 1.5em;
-                    line-height: 30px;
-                    padding: 0 7px 4px 6px;
+                /* Efecto de hover para el título (h2) */
+                .image-wrapper:hover .image-text h2 {
+                    color: #ffffff; /* Cambia el color del texto a blanco */
+                    transition: color 0.3s ease; /* Transición suave para el cambio de color */
                 }
-
-            .card .back {
-                background-image: repeating-linear-gradient(45deg, rgba(97,97,97,0.1) 0px, rgba(97,97,97,0.1) 2px,transparent 2px, transparent 4px),linear-gradient(90deg, rgb(43,43,43),rgb(43,43,43));
-                background-size: cover;
-                transform: rotateY(180deg);
-            }
-
-                .card .back a {
-                    padding: 0.3em 0.5em;
-                    background: #333;
-                    color: #fff;
-                    text-decoration: none;
-                    border-radius: 1px;
-                    font-size: 0.9em;
-                    transition: all 0.2s ease 0s;
+                /* Efecto de hover para el título (h2) */
+                .image-wrapper:hover .image-text p {
+                    color: #ffffff; /* Cambia el color del texto a blanco */
+                    transition: color 0.3s ease; /* Transición suave para el cambio de color */
                 }
-
-                    .card .back a:hover {
-                        background: #fff;
-                        color: #333;
-                        text-shadow: 0 0 1px #333;
-                    }
+            .image-wrapper:hover {
+                animation: borderAnimation 4s infinite; /* Aplica la animación de luces LED en bucle a los bordes */
+                border: 2px solid transparent; /* Añade un borde transparente para iniciar la animación */
+            }
 
         /* Estilos para los botones de imágenes DEL FINAL */
         .image-buttons {
@@ -170,7 +136,7 @@
             height: 100%;
             top: 0;
             left: 0;
-            background: linear-gradient(to right, #ad0076, #9da800);
+            background: linear-gradient(to right, #57003b, #5c6114);
             display: flex;
             flex-grow: 1;
             z-index: -1;
@@ -230,8 +196,8 @@
         /* Estilos para el párrafo con título */
         .custom-paragraph {
             position: absolute; /* Posicionar el párrafo sobre la imagen */
-            bottom: 10%; /* Ajustar la posición vertical */
-            left: 80%; /* Ajustar la posición horizontal */
+            bottom: 7%; /* Ajustar la posición vertical */
+            left: 25%; /* Ajustar la posición horizontal */
             transform: translateX(-50%); /* Centrar el párrafo */
             padding: 20px; /* Espaciado interno */
             border-radius: 5px; /* Añadir bordes redondeados */
@@ -241,7 +207,7 @@
             width: 383px;
             height: auto; /* Cambiado a 'auto' para adaptarse al contenido */
             color: white;
-            background-color: rgba(128, 128, 128, 0.5); /* Fondo gris translúcido */
+            /*background-color: rgba(128, 128, 128, 0.5); /* Fondo gris translúcido */
             border-radius: 10px;
         }
 
@@ -309,8 +275,8 @@
         <div class="top-image">
             <img src="https://i.imgur.com/HkPl2LO.png" alt="Top Image" style="width: 100%;" class="top-image">
             <div class="custom-paragraph">
-                <h1>Artificial Intelligence</h1>
-                <p>At Alignment Innovation, we specialize in harnessing the power of artificial intelligence to drive innovation and efficiency. With our cutting-edge solutions, we empower businesses to thrive in today's rapidly changing landscape. Join us as we shape the future of technology together.</p>
+                <h1>CLOUD MIGRATION</h1>
+                <p>At Alignment Innovation, we redefine the cloud migration experience. It's not just about moving data; it's about ensuring a seamless transition that enhances your business agility, security, and scalability. Our team of experts works tirelessly to understand your unique needs and challenges, crafting tailored migration strategies that align with your objectives. With a focus on reliability, security, and innovation, we guide you through every step of the migration journey, empowering you to unlock the full potential of the cloud with confidence and peace of mind.</p>
                 <!-- Botón Contact Us -->
                 <a href="ContactUs"><button>Contact Us!</button></a>
             </div>
@@ -325,144 +291,121 @@
         <div>
             <div class="ParrafoX">
                 <p>
-                    In a constantly evolving world, innovation is the key to staying ahead. At Alignment Innovation, we are dedicated to accelerating tomorrow's innovations by leveraging artificial intelligence today. We unlock the transformative potential of AI, offering solutions ranging from edge AI to deep learning. By harnessing these advanced technologies, we help drive efficiency, foster innovation, and create a competitive advantage for our clients across all aspects of their operations. Join us on the journey towards the future, where AI drives progress and unlocks new opportunities for your company.
+                    Welcome to Alignment Innovation, a leader in comprehensive cybersecurity solutions. We take pride in offering top-notch Cloud Migration services, designed to provide you with a secure and efficient transition to the cloud. With a customer-centric approach and a highly skilled team of cybersecurity experts, we're here to ensure you a seamless migration to cloud environments, giving you the peace of mind to focus on your business.
                 </p>
             </div>
         </div>
 
-        <div class="boxesContainer">
 
-            <div class="cardBox">
-                <div class="card">
-                    <div class="front">
-                        <h1>NLP</h1>
-                        <p>Hover to flip</p>
-                        <div class="circle-image"></div>
+
+
+        <!--Parte del medio-->
+
+        <div class="content">
+
+            <div class="image-container">
+                <div class="image-wrapper">
+                    <div class="image-text">
+                        <h2>Multi-Cloud Engineering</h2>
+                        <p>
+                            Our company specializes in Multi-Cloud Engineering, which means we're trained to handle multiple cloud platforms simultaneously. Whether you prefer AWS, Azure, Google Cloud, or any other leading cloud platform, our team has the expertise to design and implement solutions that fit your specific needs.
+                        </p>
                     </div>
-                    <div class="back">
-                        <h1>NLP</h1>
-                        <h6>Natural Language Processing</h6>
-                        <p>At Alignment Innovation, we master Natural Language Processing for effective communication between humans and machines. Our expertise ensures precise interaction in applications like chatbots and sentiment analysis, establishing us as leaders in this technology.</p>
+                </div>
+                <div class="image-wrapper">
+                    <div class="image-text">
+                        <h2>Microservices & API</h2>
+                        <p>
+                            With Microservices & API, we offer a flexible and scalable architecture for your cloud applications. By breaking down your systems into independent microservices and providing clear interfaces through APIs, we ensure greater agility and responsiveness in your cloud infrastructure.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <div class="image-text">
+                        <h2>Human-Centered Design</h2>
+                        <p>
+                            We adopt a human-centered design approach to ensure that cloud migration seamlessly aligns with the needs and expectations of your team and customers. We're committed to understanding your unique goals and challenges, and designing intuitive and user-friendly solutions that drive cloud adoption and success.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <div class="image-text">
+                        <h2>Agile and DevSecOps</h2>
+                        <p>
+                            We use Agile and DevSecOps methodologies to ensure a collaborative, iterative, and secure approach throughout the cloud migration process. From planning to implementation and continuous maintenance, our agile methodology and integrated secure development processes ensure fast, reliable, and secure delivery at every stage of the cloud journey.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <div class="image-text">
+                        <h2>Cloud Transformation</h2>
+                        <p>
+                            We specialize in Cloud Transformation, helping organizations evolve their operations and adopt a cloud-based business model. Through customized migration and application modernization strategies, we're committed to driving innovation and efficiency in your technology infrastructure.
+                        </p>
+                    </div>
+                </div>
+                <div class="image-wrapper">
+                    <div class="image-text">
+                        <h2>Cloud Security</h2>
+                        <p>
+                            Above all, we take cloud security very seriously. Our team of cybersecurity experts implements best practices and cutting-edge technologies to protect your data and applications in the cloud against cyber threats. From risk identification and mitigation to access management and continuous monitoring, we're here to ensure the integrity and confidentiality of your cloud environment.
+                        </p>
                     </div>
                 </div>
             </div>
 
-            <div class="cardBox">
-                <div class="card">
-                    <div class="front">
-                        <h1>RPA</h1>
-                        <p>Hover to flip</p>
-                        <div class="circle-image"></div>
-                    </div>
-                    <div class="back">
-                        <h1>RPA</h1>
-                        <h6>Robotic Process Automation</h6>
-                        <p>Robotic Process Automation is fundamental at Alignment Innovation. Our RPA expertise automates routine tasks, unleashing our teams' potential for innovation and growth.</p>
-                    </div>
-                </div>
-            </div>
+            <!--FINAL-->
 
-            <div class="cardBox">
-                <div class="card">
-                    <div class="front">
-                        <h1>MLOps</h1>
-                        <p>Hover to flip</p>
-                        <div class="circle-image"></div>
-                    </div>
-                    <div class="back">
-                        <h1>MLOps</h1>
-                        <p>At Alignment Innovation, we implement MLOps to efficiently manage Machine Learning models in production. Our integrated practice maximizes model performance, ensuring a sustainable competitive advantage.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cardBox">
-                <div class="card">
-                    <div class="front">
-                        <h1>Edge AI</h1>
-                        <p>Hover to flip</p>
-                        <div class="circle-image"></div>
-                    </div>
-                    <div class="back">
-                        <h1>Edge AI</h1>
-                        <h6>Edge Artificial Intelligence</h6>
-                        <p>We excel in Edge Artificial Intelligence implementation. At Alignment Innovation, we offer precise and rapid solutions for IoT and autonomous vehicles applications, transforming our clients' operations.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="cardBox">
-                <div class="card">
-                    <div class="front">
-                        <h1>Machine Learning</h1>
-                        <p>Hover to flip</p>
-                        <div class="circle-image"></div>
-                    </div>
-                    <div class="back">
-                        <h1>Machine Learning</h1>
-                        <p>Machine Learning is essential at Alignment Innovation. Our expertise enables us to develop customized models that optimize business processes and deliver tangible value. Trust us to lead innovation and success with Machine Learning.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cardBox">
-                <div class="card">
-                    <div class="front">
-                        <h1>Deep Learning</h1>
-                        <p>Hover to flip</p>
-                        <div class="circle-image"></div>
-                    </div>
-                    <div class="back">
-                        <h1>Deep Learning</h1>
-                        <p>At Alignment Innovation, we leverage Deep Learning to extract valuable insights from large datasets. Our expertise allows us to deliver advanced solutions that drive efficiency and accuracy.</p>
-                    </div>
-                </div>
+            <div>
+                <div class="sub-title">ALL OUR CAPABILITIES</div>
             </div>
         </div>
-
-        <!--Imagenes del final-->
-
-        <div>
-            <div class="sub-title">ALL OUR CAPABILITIES</div>
-        </div>
-    </div>
 
     <div class="image-buttons">
-        <div class="image-button">
-            <a href="/CyberSecurity">
-                <img src="https://i.imgur.com/VEDDy4Y.png">
-                <p>CyberSecurity</p>
-                <a />
-        </div>
-        <div class="image-button">
-            <a href="CallCenterService">
-                <img src="https://i.imgur.com/KjrW4ss.png">
-                <p>Call Center Services</p>
-                <a />
-        </div>
-        <div class="image-button">
-            <a href="CloudMigration">
-                <img src="https://i.imgur.com/d1wkxcz.png">
-                <p>Cloud Migration</p>
-                <a />
-        </div>
-        <div class="image-button">
-            <a href="/ArtificialIntelligence">
-                <img src="https://i.imgur.com/O6nG6jI.png">
-                <p>Artificial Intelligence</p>
-                <a />
-        </div>
-        <div class="image-button">
-            <a href="ThreatIntelligence">
-                <img src="https://i.imgur.com/r0KexV5.png">
-                <p>Threat Intelligence</p>
-                <a />
-        </div>
-        <div class="image-button">
-            <a href="/DevSecOps">
-                <img src="https://i.imgur.com/OcgfqTR.png">
-                <p>Dev Sec Ops</p>
-                <a />
-        </div>
+
+            <div class="image-button">
+                <a href="/ArtificialIntelligence">
+                    <img src="https://i.imgur.com/O6nG6jI.png">
+                    <p>Artificial Intelligence</p>
+                    <a />
+            </div>
+
+
+            <div class="image-button">
+                <a href="CallCenterService">
+                    <img src="https://i.imgur.com/KjrW4ss.png">
+                    <p>Call Center Services</p>
+                    <a />
+            </div>
+
+
+            <div class="image-button">
+                <a href="CloudMigration">
+                    <img src="https://i.imgur.com/d1wkxcz.png">
+                    <p>Cloud Migration</p>
+                    <a />
+            </div>
+
+            <div class="image-button">
+                <a href="/CyberSecurity">
+                    <img src="https://i.imgur.com/VEDDy4Y.png">
+                    <p>CyberSecurity</p>
+                    <a />
+            </div>
+
+            <div class="image-button">
+                <a href="/DevSecOps">
+                    <img src="https://i.imgur.com/OcgfqTR.png">
+                    <p>Dev Sec Ops</p>
+                    <a />
+            </div>
+
+            <div class="image-button">
+                <a href="ThreatIntelligence">
+                    <img src="https://i.imgur.com/r0KexV5.png">
+                    <p>Threat Intelligence</p>
+                    <a />
+            </div>
     </div>
 
 </body>

@@ -15,66 +15,114 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
-*{
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-font-family: 'Poppins', sans-serif;
-}
-body{
-display: flex;
-justify-content: center;
-align-items: center;
-height: 100vh;
-}
-.card{
-width: 300px;
-height: 225px;
-background: rgb(0, 87, 128);
-position: relative;
-border-radius: 20px;
-cursor: pointer;
-box-shadow: 0 0 20px rgba(0, 0, 0, 0.123);
-}
-.card img{
-position: absolute;
-width: 100%;
-border-radius: 10px;
-}
-.content{
-position: absolute;
-width: 100%;
-bottom: 0;
-height: 50px;
-padding: 0.4em 1.5em;
-font-size: 14px;
-background: rgba(255, 255, 255, 0);
-backdrop-filter: blur(10px);
-border-radius: 10px;
-transform: scale(0.9);
-color: white;
-border: 1px solid rgba(255, 255, 255, 0.164);
-box-shadow: 0 0 20px rgba(0, 0, 0, 0.144);
-overflow: hidden;
-transition: all .4s;
-}
-.content p{
-font-size: 0.8em;
-}
-.card:hover .content{
-height: 150px;
-}
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
+        .card {
+            width: calc(50% - 5px); /* El ancho de cada tarjeta será la mitad del contenedor menos un pequeño espacio */
+            height: 300px;
+            background: rgb(0, 87, 128);
+            position: relative;
+            /*border-radius: 20px;*/
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.123);
+            margin-bottom: 5px; /* Espacio entre las filas */
+        }
+
+            .card img {
+                position: absolute;
+                width: 100%;
+                border-radius: 10px;
+            }
+
+        .content {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            height: 50px;
+            padding: 0.4em 1.5em;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            transform: scale(0.9);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.164);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.144);
+            overflow: hidden;
+            transition: all .4s;
+        }
+
+            .content p {
+                font-size: 0.8em;
+            }
+
+        .card:hover .content {
+            height: auto;
+        }
     </style>
 
 </head>
 <body>
+
+    <div class="card-container">
+        <div class="card">
+            <img src="main.jpg" alt="">
+            <div class="content">
+                <h2>Heading</h2>
+                <p>
+                    The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="main.jpg" alt="">
+            <div class="content">
+                <h2>Heading</h2>
+                <p>
+                    The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.
+                </p>
+            </div>
+        </div>
     <div class="card">
         <img src="main.jpg" alt="">
         <div class="content">
             <h2>Heading</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quas ullam vel fugiat soluta? Doloremque, quod vel? Delectus dignissimos voluptatem dolorem amet, voluptatibus iste asperiores! In tempore deserunt vero eaque.</p>
+            <p>
+                The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.
+            </p>
         </div>
     </div>
+    <div class="card">
+        <img src="main.jpg" alt="">
+        <div class="content">
+            <h2>Heading</h2>
+            <p>
+                The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.
+            </p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="main.jpg" alt="">
+        <div class="content">
+            <h2>Heading</h2>
+            <p>
+                The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.
+            </p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="main.jpg" alt="">
+        <div class="content">
+            <h2>Heading</h2>
+            <p>
+                The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.
+            </p>
+        </div>
+    </div>
+    
 </body>
 </html>

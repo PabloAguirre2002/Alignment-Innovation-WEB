@@ -187,3 +187,26 @@ h1{
     }
 }
 
+/*Pagina de CLOUD MIGRATION*/
+
+@keyframes borderAnimation {
+    0% {
+        border-color: gold; /* Primer color: dorado */
+    }
+
+    25% {
+        border-color: #FF69B4; /* Segundo color: rosa fuerte */
+    }
+
+    50% {
+        border-color: #800080; /* Tercer color: morado */
+    }
+
+    75% {
+        border-color: yellow; /* Cuarto color: amarillo */
+    }
+
+    100% {
+        border-color: silver; /* Quinto color: plateado */
+    }
+}
