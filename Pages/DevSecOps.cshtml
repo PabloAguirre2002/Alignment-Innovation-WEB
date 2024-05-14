@@ -4,132 +4,411 @@
     ViewData["Title"] = "DevSecOps";
 }
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Images</title>
 
     <style>
 
-    .features-inner {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
+        /*PARTE DEL MEDIO*/
 
-    .feature {
-        flex-basis: calc(33.33% - 20px);
-        margin-bottom: 40px; /* Espacio entre las tarjetas */
-        text-align: center; /* Centra el contenido */
-        padding: 20px; /* Agrega un relleno interno */
-        border: 1px solid #ccc; /* Agrega un borde para resaltar las tarjetas */
-    }
+        .Fotos {
+            width: 100%;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Para centrar verticalmente */
+            gap: 10px;
+            margin: 0 auto; /* Centrar horizontalmente */
+        }
 
-    /* Ajusta el ancho y el espaciado según tus preferencias */
+            .Fotos img {
+                width: 10%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+                border: 2px solid white;
+                transition: all ease-in-out 0.5s;
+            }
+
+                .Fotos img:hover {
+                    width: 25%;
+                }
+
+
+
+        /* Estilos para los botones de imágenes DEL FINAL */
+        .image-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .image-button {
+            margin: 0 10px;
+            position: relative; /* Posición relativa para que el texto esté dentro de la imagen */
+            overflow: hidden; /* Oculta el texto que está fuera de la imagen */
+        }
+
+            .image-button img {
+                width: 160px;
+                height: 190px;
+                border: 3px solid transparent; /* Borde transparente */
+                border-radius: 10px; /* Bordes redondeados */
+                transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+            }
+
+            /* Efecto de opacidad al pasar el mouse sobre las imágenes */
+            .image-button:hover img {
+                opacity: 0.5; /* Opacidad reducida al pasar el mouse */
+                border-color: rgba(43, 209, 216, 1);
+            }
+
+            /* Estilos para el texto */
+            .image-button p {
+                position: absolute; /* Posición absoluta con respecto al contenedor */
+                top: 50%; /* Alinea el texto en el centro verticalmente */
+                left: 50%; /* Alinea el texto en el centro horizontalmente */
+                transform: translate(-50%, -50%); /* Centra el texto completamente */
+                color: rgba(43, 209, 216, 1); /* Color del texto */
+                opacity: 0; /* Inicialmente el texto es transparente */
+                transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+            }
+
+            /* Mostrar el texto al pasar el mouse sobre las imágenes */
+            .image-button:hover p {
+                opacity: 1; /* Mostrar el texto con opacidad completa */
+            }
+
+        button {
+            padding: 17px 40px;
+            border-radius: 50px;
+            cursor: pointer;
+            border: 0;
+            background-color: white;
+            box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 15px;
+            transition: all 0.5s ease;
+        }
+
+            button:hover {
+                letter-spacing: 3px;
+                background-color: hsl(261deg 80% 48%);
+                color: hsl(0, 0%, 100%);
+                box-shadow: rgb(93 24 220) 0px 7px 29px 0px;
+            }
+
+            button:active {
+                letter-spacing: 3px;
+                background-color: hsl(261deg 80% 48%);
+                color: hsl(0, 0%, 100%);
+                box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+                transform: translateY(10px);
+                transition: 100ms;
+            }
+
+        /* Esta es la imagen de Fondo de cuadrados */
+        .background {
+            position: absolute;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(to right, #000000, #b30000);
+            display: flex;
+            flex-grow: 1;
+            z-index: -1;
+        }
+
+            .background div {
+                position: absolute;
+                border-radius: 100%;
+                height: 0;
+                filter: blur(240vw);
+                opacity: 0.4;
+            }
+
+                .background div:nth-child(1) {
+                    background: linear-gradient(132deg, #6b6800 0.00%, #a38800 100.00%);
+                    width: 64%;
+                    padding-top: 64%;
+                    left: 94%;
+                    top: 20%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(2) {
+                    background: linear-gradient(132deg, #bd008a 0.00%, #cc00cc 100.00%);
+                    width: 83%;
+                    padding-top: 83%;
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(3) {
+                    background: linear-gradient(132deg, #ff7b00 0.00%, #ffa200 100.00%);
+                    width: 86%;
+                    padding-top: 86%;
+                    left: 80%;
+                    top: 80%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(4) {
+                    background: linear-gradient(132deg, #11a26 0.00%, #fe0c1e 100.00%);
+                    width: 97%;
+                    padding-top: 97%;
+                    left: 30%;
+                    top: 25%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(5) {
+                    background: linear-gradient(132deg, #122950 0.00%, #9701ba 100.00%);
+                    width: 30%;
+                    padding-top: 30%;
+                    left: 40%;
+                    top: 67%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(6) {
+                    background: linear-gradient(132deg, #6b3b3a 0.00%, #592bd2 100.00%);
+                    width: 0%;
+                    padding-top: 0%;
+                    left: 20%;
+                    top: 57%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(7) {
+                    background: linear-gradient(132deg, #a3c06b 0.00%, #963431 100.00%);
+                    width: 18%;
+                    padding-top: 18%;
+                    left: 25%;
+                    top: 81%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(8) {
+                    background: linear-gradient(132deg, #78aa5b 0.00%, #4a4df8 100.00%);
+                    width: 10%;
+                    padding-top: 10%;
+                    left: 32%;
+                    top: 17%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+                .background div:nth-child(9) {
+                    background: linear-gradient(132deg, #3e017a 0.00%, #af2872 100.00%);
+                    width: 38%;
+                    padding-top: 38%;
+                    left: 40%;
+                    top: 91%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+
+
+
+
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Estilos para la imagen dentro del contenido */
+        .top-image {
+            width: 100%; /* Ajusta el ancho según sea necesario */
+            margin-top: -100px; /* Ajusta el margen superior según sea necesario para evitar solapamientos */
+            position: relative; /* Añadir posición relativa para permitir posicionar elementos hijos */
+            border-radius: 20px; /* Añadir bordes redondeados */
+            overflow: hidden; /* Ocultar el desbordamiento para que el desenfoque se limite al contenedor */
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)); /* Aplicar efecto de sombra difuminada */
+        }
+        /* Estilos para el párrafo con título */
+        .custom-paragraph {
+            position: absolute; /* Posicionar el párrafo sobre la imagen */
+            bottom: 7%; /* Ajustar la posición vertical */
+            left: 80%; /* Ajustar la posición horizontal */
+            transform: translateX(-50%); /* Centrar el párrafo */
+            padding: 20px; /* Espaciado interno */
+            border-radius: 5px; /* Añadir bordes redondeados */
+            font-size: 16px; /* Tamaño de fuente */
+            text-align: center; /* Alinear texto al centro */
+            z-index: 1; /* Asegurar que el párrafo esté sobre la imagen */
+            width: 383px;
+            height: auto; /* Cambiado a 'auto' para adaptarse al contenido */
+            color: white;
+            /*background-color: rgba(128, 128, 128, 0.5); /* Fondo gris translúcido */
+            border-radius: 10px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+
+        .img-fluid {
+            background-color: #ccc; /* Fondo gris */
+            border-radius: 50%; /* Hace que la imagen sea circular */
+        }
+
+        .image-text {
+            margin-top: 10px; /* Espacio entre la imagen y el texto */
+            text-align: center; /* Alinear texto al centro */
+        }
+
+        .ParrafoX p {
+            color: white;
+            background-color: rgba(204, 204, 204, 0.5);
+        }
+
+        .sub-title {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            margin-top: 50px; /* Ajusta según sea necesario */
+            padding: 10px; /* Agregado para el recuadro alrededor del texto */
+            background-color: #3B6BB0; /* Agregado para el fondo violeta */
+        }
+
+        /* Nuevo selector CSS más específico para .sub-title */
+        .sub-title-container .sub-title {
+            background-color: rgba(204, 204, 204, 0.5); /* Color de fondo */
+            padding: 10px; /* Espaciado interno */
+            text-align: center; /* Alinear texto al centro */
+            margin-top: 20px; /* Espaciado superior */
+        }
+
+        .circle-image {
+            width: 150px; /* Ajusta el tamaño de la imagen circular según tus necesidades */
+            height: 150px; /* Ajusta el tamaño de la imagen circular según tus necesidades */
+            background-image: url('https://i.imgur.com/YNb0qdC.png'); /* Reemplaza 'url_de_tu_imagen_redonda.jpg' con la URL de tu imagen redonda */
+            background-size: cover;
+            border-radius: 50%; /* Esto hace que la imagen tenga forma de círculo */
+            margin: 0 auto; /* Esto centra la imagen horizontalmente */
+        }
+
     </style>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Solid Template</title>
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
-    <link rel="stylesheet" href="dist/css/style.css">
-    <script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
-    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-    </head>
-
-    <body>
-        <main>
-            <section class="hero">
-                <div class="container">
-                    <div class="hero-inner">
-                        <div class="hero-copy">
-                            <h1 class="hero-title mt-0">Landing template for startups</h1>
-                            <p class="hero-paragraph">Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.</p>
-                            <div class="hero-cta"><a class="button button-primary" href="#">Pre order now</a><a class="button" href="#">Get in touch</a></div>
-                        </div>
-                        <div class="hero-figure anime-element">
-                            <svg class="placeholder" width="528" height="396" viewBox="0 0 528 396">
-                                <rect width="528" height="396" style="fill:transparent;" />
-                            </svg>
-                            <div class="hero-figure-box hero-figure-box-01" data-rotation="45deg"></div>
-                            <div class="hero-figure-box hero-figure-box-02" data-rotation="-45deg"></div>
-                            <div class="hero-figure-box hero-figure-box-03" data-rotation="0deg"></div>
-                            <div class="hero-figure-box hero-figure-box-04" data-rotation="-135deg"></div>
-                            <div class="hero-figure-box hero-figure-box-05"></div>
-                            <div class="hero-figure-box hero-figure-box-06">&nbsp;</div>
-                            <div class="hero-figure-box hero-figure-box-07"></div>
-                            <div class="hero-figure-box hero-figure-box-08" data-rotation="-22deg"></div>
-                            <div class="hero-figure-box hero-figure-box-09" data-rotation="-52deg"></div>
-                            <div class="hero-figure-box hero-figure-box-10" data-rotation="-50deg"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        <section class="features section">
-            <div class="container">
-                <div class="features-inner section-inner has-bottom-divider">
-                    <div class="features-wrap">
-                        <div class="feature text-center is-revealing">
-                            <div class="feature-inner">
-                                <div class="feature-icon">
-                                    <img src="https://i.imgur.com/UNQKuvr.png" alt="Feature 01">
-                                </div>
-                                <h4 class="feature-title mt-24">Be Productive</h4>
-                                <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>
-                            </div>
-                        </div>
-                        <div class="feature text-center is-revealing">
-                            <div class="feature-inner">
-                                <div class="feature-icon">
-                                    <img src="https://i.imgur.com/bE9Xhhf.png" alt="Feature 02">
-                                </div>
-                                <h4 class="feature-title mt-24">Be Productive</h4>
-                                <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>
-                            </div>
-                        </div>
-                        <div class="feature text-center is-revealing">
-                            <div class="feature-inner">
-                                <div class="feature-icon">
-                                    <img src="https://i.imgur.com/zu2sxRb.png" alt="Feature 03">
-                                </div>
-                                <h4 class="feature-title mt-24">Be Productive</h4>
-                                <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>
-                            </div>
-                        </div>
-                        <div class="feature text-center is-revealing">
-                            <div class="feature-inner">
-                                <div class="feature-icon">
-                                    <img src="https://i.imgur.com/PJIuLqF.png" alt="Feature 04">
-                                </div>
-                                <h4 class="feature-title mt-24">Be Productive</h4>
-                                <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>
-                            </div>
-                        </div>
-                        <div class="feature text-center is-revealing">
-                            <div class="feature-inner">
-                                <div class="feature-icon">
-                                    <img src="https://i.imgur.com/M5WxzyB.png" alt="Feature 05">
-                                </div>
-                                <h4 class="feature-title mt-24">Be Productive</h4>
-                                <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>
-                            </div>
-                        </div>
-                        <div class="feature text-center is-revealing">
-                            <div class="feature-inner">
-                                <div class="feature-icon">
-                                    <img src="https://i.imgur.com/WPbF3cO.png" alt="Feature 06">
-                                </div>
-                                <h4 class="feature-title mt-24">Be Productive</h4>
-                                <p class="text-sm mb-0">Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. A arcu cursus vitae congue mauris. Nam at lectus urna duis convallis. Mauris rhoncus aenean vel elit scelerisque mauris.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+    <div class="background">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
     </div>
 
-    <script src="dist/js/main.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        <!-- Imagen dentro del contenido -->
+        <div class="top-image">
+            <img src="https://i.imgur.com/6zPjCfp.png" alt="Top Image" style="width: 100%;" class="top-image">
+            <div class="custom-paragraph">
+                <h1>CLOUD MIGRATION</h1>
+                <p>At Alignment Innovation, we redefine the cloud migration experience. It's not just about moving data; it's about ensuring a seamless transition that enhances your business agility, security, and scalability. Our team of experts works tirelessly to understand your unique needs and challenges, crafting tailored migration strategies that align with your objectives. With a focus on reliability, security, and innovation, we guide you through every step of the migration journey, empowering you to unlock the full potential of the cloud with confidence and peace of mind.</p>
+                <!-- Botón Contact Us -->
+                <a href="ContactUs"><button>Contact Us!</button></a>
+            </div>
+        </div>
+
+
+
+        <div>
+            <div class="sub-title">OUR SPECIALTIES IN THE AREA</div>
+        </div>
+
+        <div>
+            <div class="ParrafoX">
+                <p>
+                    Welcome to Alignment Innovation, a leader in comprehensive cybersecurity solutions. We take pride in offering top-notch Cloud Migration services, designed to provide you with a secure and efficient transition to the cloud. With a customer-centric approach and a highly skilled team of cybersecurity experts, we're here to ensure you a seamless migration to cloud environments, giving you the peace of mind to focus on your business.
+                </p>
+            </div>
+        </div>
+
+
+
+
+        <!--Parte del medio-->
+
+        <div class="Fotos">
+            <img src="https://i.imgur.com/WHn7gZ5.jpg" />
+            <img src="https://i.imgur.com/vjyyQrV.jpg" />
+            <img src="https://i.imgur.com/WHn7gZ5.jpg" />
+            <img src="https://i.imgur.com/vjyyQrV.jpg" />
+            <img src="https://i.imgur.com/WHn7gZ5.jpg" />
+            <img src="https://i.imgur.com/vjyyQrV.jpg" />
+        </div>
+
+            <!--FINAL-->
+
+            <div>
+                <div class="sub-title">ALL OUR CAPABILITIES</div>
+            </div>
+        </div>
+
+        <div class="image-buttons">
+
+            <div class="image-button">
+                <a href="/ArtificialIntelligence">
+                    <img src="https://i.imgur.com/O6nG6jI.png">
+                    <p>Artificial Intelligence</p>
+                    <a />
+            </div>
+
+
+            <div class="image-button">
+                <a href="CallCenterService">
+                    <img src="https://i.imgur.com/KjrW4ss.png">
+                    <p>Call Center Services</p>
+                    <a />
+            </div>
+
+
+            <div class="image-button">
+                <a href="CloudMigration">
+                    <img src="https://i.imgur.com/d1wkxcz.png">
+                    <p>Cloud Migration</p>
+                    <a />
+            </div>
+
+            <div class="image-button">
+                <a href="/CyberSecurity">
+                    <img src="https://i.imgur.com/VEDDy4Y.png">
+                    <p>CyberSecurity</p>
+                    <a />
+            </div>
+
+            <div class="image-button">
+                <a href="/DevSecOps">
+                    <img src="https://i.imgur.com/OcgfqTR.png">
+                    <p>Dev Sec Ops</p>
+                    <a />
+            </div>
+
+            <div class="image-button">
+                <a href="ThreatIntelligence">
+                    <img src="https://i.imgur.com/r0KexV5.png">
+                    <p>Threat Intelligence</p>
+                    <a />
+            </div>
+        </div>
+
 </body>
 </html>

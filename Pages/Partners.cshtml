@@ -16,3 +16,34 @@
     </style>
 </head>
 </html>
+
+
+<div class="Fotos">
+    <img src="https://i.imgur.com/WHn7gZ5.jpg" />
+    <img src="https://i.imgur.com/vjyyQrV.jpg" />
+    <img src="https://i.imgur.com/WHn7gZ5.jpg" />
+    <img src="https://i.imgur.com/vjyyQrV.jpg" />
+    <img src="https://i.imgur.com/WHn7gZ5.jpg" />
+    <img src="https://i.imgur.com/vjyyQrV.jpg" />
+</div>
+
+.Fotos {
+            width: 70%;
+            height: 450px;
+            display : flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .Fotos img {
+            width: 10%;
+            height: 100%;
+            object-fit:cover;
+            border-radius: 10px;
+            border: 2px solid white;
+            transition: all ease-in-out 0.5s;
+        }
+
+        .Fotos img:hover {
+            width: 25%;
+        }
