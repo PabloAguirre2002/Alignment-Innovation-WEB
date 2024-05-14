@@ -21,21 +21,20 @@
             justify-content: space-between;
         }
 
+
         .card {
-            width: calc(50% - 5px); /* El ancho de cada tarjeta será la mitad del contenedor menos un pequeño espacio */
+            width: 560px; /* El ancho de cada tarjeta será la mitad del contenedor menos un pequeño espacio */
             height: 300px;
-            background: rgb(0, 87, 128);
             position: relative;
-            /*border-radius: 20px;*/
             cursor: pointer;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.123);
-            margin-bottom: 5px; /* Espacio entre las filas */
+            margin-bottom: 70px; /* Espacio entre las filas */
+            background-color: black;
         }
 
             .card img {
                 position: absolute;
                 width: 100%;
-                border-radius: 10px;
             }
 
         .contentX {
@@ -214,8 +213,8 @@
         /* Estilos para el párrafo con título */
         .custom-paragraph {
             position: absolute; /* Posicionar el párrafo sobre la imagen */
-            bottom: 10%; /* Ajustar la posición vertical */
-            left: 80%; /* Ajustar la posición horizontal */
+            bottom: 20%; /* Ajustar la posición vertical */
+            left: 20%; /* Ajustar la posición horizontal */
             transform: translateX(-50%); /* Centrar el párrafo */
             padding: 20px; /* Espaciado interno */
             border-radius: 5px; /* Añadir bordes redondeados */
@@ -255,27 +254,25 @@
             text-align: center;
             color: white;
             font-size: 24px;
-            margin-top: 50px; /* Ajusta según sea necesario */
+            margin-top: 50px; /* Ajusta según sea necesario para obtener el espacio deseado */
             padding: 10px; /* Agregado para el recuadro alrededor del texto */
             background-color: #3B6BB0; /* Agregado para el fondo violeta */
         }
 
-        /* Nuevo selector CSS más específico para .sub-title */
-        .sub-title-container .sub-title {
-            background-color: rgba(204, 204, 204, 0.5); /* Color de fondo */
-            padding: 10px; /* Espaciado interno */
-            text-align: center; /* Alinear texto al centro */
-            margin-top: 20px; /* Espaciado superior */
+        .sub-title-container {
+            width: 100%; /* Ancho del 100% para cubrir toda la pantalla */
+            display: block; /* Asegura que ocupe todo el ancho disponible */
         }
 
-        .circle-image {
-            width: 150px; /* Ajusta el tamaño de la imagen circular según tus necesidades */
-            height: 150px; /* Ajusta el tamaño de la imagen circular según tus necesidades */
-            background-image: url('https://i.imgur.com/YNb0qdC.png'); /* Reemplaza 'url_de_tu_imagen_redonda.jpg' con la URL de tu imagen redonda */
-            background-size: cover;
-            border-radius: 50%; /* Esto hace que la imagen tenga forma de círculo */
-            margin: 0 auto; /* Esto centra la imagen horizontalmente */
+        .sub-titleX {
+            text-align: center;
+            color: white;
+            font-size: 24px;
+            margin-top: 50px;
+            padding: 10px;
+            background-color: #3B6BB0; /* El fondo violeta */
         }
+
 
     </style>
 
@@ -293,8 +290,10 @@
         <div class="top-image">
             <img src="https://i.imgur.com/XWpDc43.png" alt="Top Image" style="width: 100%;" class="top-image">
             <div class="custom-paragraph">
-                <h1>Artificial Intelligence</h1>
-                <p>At Alignment Innovation, we specialize in harnessing the power of artificial intelligence to drive innovation and efficiency. With our cutting-edge solutions, we empower businesses to thrive in today's rapidly changing landscape. Join us as we shape the future of technology together.</p>
+                <h1>Call Center Services</h1>
+                <p>
+                    At Alignment Innovation, we offer cutting-edge cybersecurity solutions to protect our clients against the most advanced digital threats. Join us in our commitment to excellence and safeguarding your most critical digital assets.
+                </p>
                 <!-- Botón Contact Us -->
                 <a href="ContactUs"><button>Contact Us!</button></a>
             </div>
@@ -309,7 +308,7 @@
         <div>
             <div class="ParrafoX">
                 <p>
-                    In a constantly evolving world, innovation is the key to staying ahead. At Alignment Innovation, we are dedicated to accelerating tomorrow's innovations by leveraging artificial intelligence today. We unlock the transformative potential of AI, offering solutions ranging from edge AI to deep learning. By harnessing these advanced technologies, we help drive efficiency, foster innovation, and create a competitive advantage for our clients across all aspects of their operations. Join us on the journey towards the future, where AI drives progress and unlocks new opportunities for your company.
+                    At Alignment Innovation, we are dedicated to propelling cybersecurity to new heights. We are industry leaders, offering cutting-edge solutions that protect our clients against the most sophisticated digital threats. With a team of highly skilled experts and an unwavering commitment to excellence, we are transforming the cybersecurity landscape for a safer and more reliable future.
                 </p>
             </div>
         </div>
@@ -321,64 +320,62 @@
             <div class="card">
                 <img src="https://i.imgur.com/WPq5OV8.png" alt="">
                 <div class="contentX">
-                    <h2>Heading</h2>
-                    <p>
-                        The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.
-                    </p>
+                    <h2>Proactive Vulnerability Scanning</h2>
+                    <h5>
+                        Our proactive approach to vulnerability scanning ensures that our clients are always one step ahead of cyberattacks. By using advanced detection technologies, we identify and mitigate any weaknesses in their network infrastructure, providing solid and reliable protection.
+                    </h5>
                 </div>
             </div>
             <div class="card">
                 <img src="https://i.imgur.com/Ndk4vly.png" alt="">
                 <div class="contentX">
-                    <h2>Heading</h2>
-                    <p>
-                        The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.
-                    </p>
+                    <h2>Anomalous Behavior Analysis</h2>
+                    <h5>
+                        We implement anomalous behavior analysis systems that constantly monitor network traffic for suspicious activities. This innovative technology enables us to quickly detect and respond to any malicious activity, keeping our clients safe at all times.
+                    </h5>
                 </div>
             </div>
             <div class="card">
                 <img src="https://i.imgur.com/1hIaLDo.png" alt="">
                 <div class="contentX">
-                    <h2>Heading</h2>
-                    <p>
-                        The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.
-                    </p>
+                    <h2>Next-Generation Firewalls</h2>
+                    <h5>
+                        Our next-generation firewalls offer robust defense against a wide range of cyber threats. With advanced packet inspection and content filtering capabilities, we ensure that only secure traffic has access to our clients' networks, thus protecting their critical data.
+                    </h5>
                 </div>
             </div>
             <div class="card">
                 <img src="https://i.imgur.com/10KXwso.png" alt="">
                 <div class="contentX">
-                    <h2>Heading</h2>
-                    <p>
-                        The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.
-                    </p>
+                    <h2>State-of-the-Art Data Encryption</h2>
+                    <h5>
+                        We employ state-of-the-art data encryption techniques to protect our clients' sensitive information from unauthorized access. Our advanced encryption algorithms guarantee the security and integrity of data at all times, even in highly vulnerable environments.
+                    </h5>
                 </div>
             </div>
             <div class="card">
                 <img src="https://i.imgur.com/RrZ2M2j.png" alt="">
                 <div class="contentX">
-                    <h2>Heading</h2>
-                    <p>
-                        The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.
-                    </p>
+                    <h2>Identity and Access Management</h2>
+                    <h5>
+                        We implement identity and access management solutions that allow our clients to effectively control who has access to their systems and data. With multifactor authentication and granular access policies, we provide comprehensive and customizable security that adapts to the specific needs of each organization.
+                    </h5>
                 </div>
             </div>
             <div class="card">
                 <img src="https://i.imgur.com/8wU2mo9.png" alt="">
                 <div class="contentX">
-                    <h2>Heading</h2>
-                    <p>
-                        The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.The reason why the entire content is not showing is that the height of the .content element is initially set to 50px, and it increases to 150px on hover. However, since the content exceeds 150px in height, it gets cut off.
-                    </p>
+                    <h2>Security Awareness Training</h2>
+                    <h5>
+                        We recognize that cybersecurity is a collective effort that requires active participation from all users. Therefore, we offer security awareness training programs that educate employees on best security practices and keep them vigilant against potential threats.
+                    </h5>
                 </div>
             </div>
 
         <!--Imagenes del final-->
-
-        <div>
-            <div class="sub-title">ALL OUR CAPABILITIES</div>
-        </div>
-    </div>
+            <div class="sub-title-container">
+                <div class="sub-titleX">ALL OUR CAPABILITIES</div>
+            </div>
 
     <div class="image-buttons">
 
